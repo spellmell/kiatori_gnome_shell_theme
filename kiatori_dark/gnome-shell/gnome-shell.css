@@ -54,17 +54,21 @@ stage {
 /* Common Stylings */
 .screenshot-ui-panel, .workspace-switcher, .switcher-list, .resize-popup, .osd-monitor-label, .osd-window {
   color: darkkhaki;
-  background-color: rgba(33, 37, 43, 1);
-  border: 1px solid rgba(255, 255, 255, 0.02);
-  border-radius: 3px;
-  padding: 12px; }
+  background-color: rgba(33, 37, 43, 0.81); /* #21252b */
+  background-image: url('assets/grad_bg.svg') !important;
+  border-radius: 72px 18px 72px 72px !important;
+  border: solid 36px rgba(139, 0, 0, 1); /* border de color primario darkred */
+  box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
+                    0 0 18 black !important;
+  padding: 24px;
+  spacing: 6px; }
 
 .workspace-thumbnails .workspace-thumbnail {
   color: darkkhaki;
   background-color: rgba(255, 255, 255, 0.1); }
 
 .app-well-app.app-folder .overview-icon, .app-folder.grid-search-result .overview-icon, .app-well-app .overview-icon, .grid-search-result .overview-icon, .dash-item-container .show-apps .overview-icon, .list-search-result, .search-provider-icon, .switcher-list .item-box {
-  border-radius: 3px;
+  border-radius: 18px;
   padding: 6px;
   spacing: 6px;
   border: 2px solid #21252b;
@@ -73,9 +77,16 @@ stage {
 
 .modal-dialog { /* dialogos emergentes cerrar, apagar, etc */
   color: darkkhaki;
-  background-color: rgba(33, 37, 43, 0.72);
-  border-radius: 12px;
-  border: 1px solid rgba(189, 183, 107, 0.18); }
+  font-weight: 400;
+  font-size: 10pt;
+  background-color: rgba(33, 37, 43, 0.81) /* #21252b */ ;
+  background-image: url('assets/grad_bg.svg');
+  border-radius: 72px 18px 72px 72px;
+  border: solid 36px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
+  box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
+                    0 0 18 black;
+  padding: 24px;
+  spacing: 6px; }
 
 #LookingGlassDialog > #Toolbar .lg-toolbar-button, .app-folder-dialog .folder-name-container .edit-folder-button, .button {
   border-radius: 3px;
@@ -161,8 +172,9 @@ stage {
     margin-left: 0 !important;
     margin-right: 0 !important; }
 
+/* capturas de pantalla */
 .screenshot-ui-show-pointer-button, .screenshot-ui-type-button {
-  background-color: #21252b;
+  background-color: transparent;
   background-color: none; }
   .screenshot-ui-show-pointer-button:insensitive, .screenshot-ui-type-button:insensitive {
     color: rgba(0, 0, 0, 0.3);
@@ -179,26 +191,27 @@ stage {
       color: rgba(255, 255, 255, 0.5); }
   .screenshot-ui-show-pointer-button:focus, .screenshot-ui-type-button:focus {
     color: darkkhaki;
-    background-color: #575859;
-    /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.6); */ }
+    background-color: darkred; }
     .screenshot-ui-show-pointer-button:focus:hover, .screenshot-ui-type-button:focus:hover {
-      background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+      color: #21252b;
+      background-color: darkkhaki; }
     .screenshot-ui-show-pointer-button:focus:active, .screenshot-ui-type-button:focus:active {
-      background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+      color: darkkhaki;
+      background-color: #575859; }
   .screenshot-ui-show-pointer-button:hover, .screenshot-ui-type-button:hover {
-    color: darkkhaki;
-    background-color: #575859; }
+    color: #21252b;
+    background-color: darkkhaki; }
   .screenshot-ui-show-pointer-button:active, .screenshot-ui-type-button:active {
     color: darkkhaki;
     background-color: #575859; }
   .screenshot-ui-show-pointer-button:outlined, .screenshot-ui-type-button:outlined, .screenshot-ui-show-pointer-button:checked, .screenshot-ui-type-button:checked {
     color: darkkhaki;
-    background-color: #575859; }
+    background-color: darkred; }
     .screenshot-ui-show-pointer-button:outlined:hover, .screenshot-ui-type-button:outlined:hover, .screenshot-ui-show-pointer-button:checked:hover, .screenshot-ui-type-button:checked:hover {
-      background-color: #575859; }
+      color: #21252b;
+      background-color: darkkhaki; }
     .screenshot-ui-show-pointer-button:outlined:active, .screenshot-ui-type-button:outlined:active, .screenshot-ui-show-pointer-button:checked:active, .screenshot-ui-type-button:checked:active {
+      color: darkkhaki;
       background-color: #575859; }
 
 /* General Typography */
@@ -253,36 +266,48 @@ stage {
 
 /* Entries */
 StEntry {
-  border-radius: 3px;
-  padding: 8px;
+  padding: 18px;
   color: darkkhaki;
-  background-color: darkkhaki;
-  color: rgba(0, 0, 0, 0.5);
-  border: 2px solid white;
+  background-color: rgba(33, 37, 43, 0.81);
+  border-radius: 72px;
+  border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
   selection-background-color: darkred;
-  selected-color: #21252b; }
+  selected-color: darkkhaki; }
   StEntry:hover {
-    background-color: #fbfafa;
-    border-color: #fbfafa;
-    color: rgba(0, 0, 0, 0.5); }
+    /* input buscador hover */
+    color: darkkhaki;
+    font-size: 16pt;
+    background-color: rgba(33, 37, 43, 0.81);
+    border-radius: 72px;
+    border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
+    box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
+    0 0 18 black;
+    padding: 18px;
+    spacing: 6px;
+  }
   StEntry:focus {
-    background-color: #f5f9fe;
-    border-color: darkred;
-    color: darkkhaki; }
+    /* input en modal */
+    color: #21252b;
+    font-size: 16pt;
+    font-weight: 400;
+    background-color: khaki; 
+    border-radius: 72px;
+    border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
+    }
   StEntry:insensitive {
-    background-color: darkkhaki;
-    border-color: darkkhaki;
-    color: rgba(148, 147, 146, 0.9); }
+    background-color: #21252b;
+    border-color: #575859;
+    color: darkkhaki; }
   StEntry StIcon.capslock-warning {
     icon-size: 16px;
-    warning-color: #e5a50a;
+    warning-color: darkorange;
     padding: 0 4px; }
   StEntry StIcon.peek-password {
     icon-size: 24px;
     padding: 0 4px; }
   StEntry StLabel.hint-text {
     margin-left: 2px;
-    color: rgba(0, 0, 0, 0.5); }
+    color: darkkhaki; }
 
 /* Buttons */
 .button {
@@ -375,8 +400,9 @@ StScrollBar {
   color: darkkhaki;
   font-size: 10pt;
   background-color: rgba(33, 37, 43, 0.81) /* #21252b */ ;
+  background-image: url('assets/grad_bg.svg');
   border-radius: 72px 18px 72px 72px;
-  border: solid 36px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
+  border: solid 36px rgba(139, 0, 0, 1); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
   padding: 24px;
@@ -1324,10 +1350,11 @@ StScrollBar {
     icon-size: 32px; }
 
 .screenshot-ui-panel {
-  border-radius: 3px;
   padding: 18px;
   padding-bottom: 12px;
   margin-bottom: 4em;
+  border-radius: 3px;
+  border: solid 36px rgba(139, 0, 0, 0.72);
   spacing: 12px; }
 
 .screenshot-ui-close-button {
@@ -1346,8 +1373,8 @@ StScrollBar {
   width: 36px;
   height: 36px;
   border-radius: 3px;
-  border: 4px white;
-  padding: 4px; }
+  border: 6px rgba(139, 0, 0, 0.72);
+  padding: 6px; }
   .screenshot-ui-capture-button .screenshot-ui-capture-button-circle {
     background-color: darkkhaki;
     transition-duration: 200ms;
@@ -1462,14 +1489,14 @@ StScrollBar {
 
 /* Top Bar */
 #panel {
-  background-color: #21252b;
-  border: solid 3px rgba(139, 0, 0, 0.36) !important; /* border de color primario darkred */
+  background-color: rgba(33, 37, 43, 0.81);
+  border-top: solid 6px rgba(139, 0, 0, 0.72) !important; /* border de color primario darkred */
   font-weight: bold;
   height: 2.2em;
   transition-duration: 250ms; }
   #panel.unlock-screen, #panel.login-screen, #panel:overview {
-    border: solid 3px rgba(139, 0, 0, 0.36) !important; /* border de color primario darkred */
-    background-color: #21252b; }
+    background-color: rgba(33, 37, 43, 0.81);
+    border-top: solid 6px rgba(139, 0, 0, 0.72) !important; /* border de color primario darkred */ }
   #panel .panel-button {
     font-weight: bold;
     color: darkkhaki;
@@ -1632,15 +1659,15 @@ StScrollBar {
 
 .search-entry { /* buscador */
   color: darkkhaki;
-  font-size: 18pt;
-  background-color: rgba(33, 37, 43, 0.36);
-  border-radius: 6px;
-  border: solid 1px black;
+  font-size: 16pt;
+  background-color: rgba(33, 37, 43, 0.81);
+  border-radius: 72px;
+  border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 12px;
+  padding: 18px;
   spacing: 6px;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
   }
   
   .search-entry:hover {
@@ -1744,17 +1771,17 @@ StScrollBar {
   #dash .placeholder {
     background-image: none;
     background-size: contain;
-    height: 32px; }
+    height: 36px; }
   #dash .empty-dash-drop-target {
-    width: 32px;
-    height: 32px; }
+    width: 36px;
+    height: 36px; }
   #dash .app-well-app-running-dot {
-    margin-bottom: 14px; }
+    margin-bottom: 18px; }
 
 .dash-background {
   background-color: rgba(33, 37, 43, 0.81);
-  border-radius: 72px 18px 72px 72px;
-  border: solid 36px rgba(139, 0, 0, 0.72); /* darkred first color */
+  border-radius: 72px;
+  border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
   padding: 18px;
@@ -1773,9 +1800,11 @@ StScrollBar {
 .dash-item-container .app-well-app .overview-icon, .dash-item-container .grid-search-result .overview-icon {
   /* app ancladas al dock */
   padding: 6px;
-  border-radius: 6px; }
+  border: 3px;
+  border-radius: 6px;}
 
 .dash-item-container .show-apps .overview-icon {
+  border: 3px;
   border-radius: 6px;
   background-color: #21252b; }
 
@@ -2000,7 +2029,7 @@ StScrollBar {
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  background-color: rgba(188, 214, 246, 0.3);
+  background-color: #575859;
   box-shadow: 0 0 2px 2px darkred; }
 
 .pie-timer {
@@ -2008,7 +2037,7 @@ StScrollBar {
   height: 60px;
   -pie-border-width: 3px;
   -pie-border-color: darkred;
-  -pie-background-color: rgba(233, 242, 252, 0.3); }
+  -pie-background-color: #575859; }
 
 .magnifier-zoom-region {
   border: 2px solid darkred; }
@@ -2016,7 +2045,7 @@ StScrollBar {
     border-width: 0; }
 
 .select-area-rubberband {
-  background-color: rgba(53, 132, 228, 0.3);
+  background-color: #575859;
   border: 1px solid darkred; }
 
 .user-icon {
@@ -2644,7 +2673,7 @@ StScrollBar {
 /* Overrides */
 #panel, #panel.solid {
   font-weight: normal;
-  background-color: rgba(33, 37, 43, 1);
+  background-color: rgba(33, 37, 43, 0.81);
   box-shadow: 0 0 6px #21252b;
   /* background-gradient-direction: vertical;
   background-gradient-end: #ebe8e6;
@@ -2653,13 +2682,14 @@ StScrollBar {
                              use the top border color for any border, so we
                              need to set it even if all we want is a bottom
                              border */
-  border-bottom: 1px solid #666;
+  /* border-bottom: 1px solid #666; */
   app-icon-bottom-clip: 0px; }
   #panel:overview, #panel.solid:overview {
-    background-color: #21252b;
-    background-gradient-end: #21252b;
-    border-top-color: #21252b;
-    border-bottom: 1px solid #21252b; }
+    background-color: rgba(33, 37, 43, 0.81);
+    /* background-gradient-end: #21252b; */
+    /* border-top-color: #21252b; */
+    /* border-bottom: 1px solid #21252b; */
+  }
     #panel:overview .panel-button, #panel.solid:overview .panel-button {
       color: darkkhaki;
     background-color: darkred; /* color buttons */
