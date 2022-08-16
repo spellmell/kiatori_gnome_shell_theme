@@ -349,6 +349,7 @@ StEntry {
   -barlevel-background-color: #21252b;
   -barlevel-border-width: 18px;
   -barlevel-border-color: transparent;
+  -barlevel-border-radius: 72px 18px 72px 72px;
   -barlevel-active-background-color: #575859;
   -barlevel-active-border-color: transparent;
   -barlevel-overdrive-color: transparent;
@@ -401,10 +402,10 @@ StScrollBar {
 .popup-menu-content, .candidate-popup-content { /* menus */
   color: darkkhaki;
   font-size: 10pt;
-  background-color: rgba(33, 37, 43, 0.81) /* #21252b */ ;
+  background-color: rgba(33, 37, 43, 0.88) /* #21252b */ ;
   background-image: url('assets/grad_bg.svg');
   border-radius: 72px 18px 72px 72px;
-  border: solid 36px rgba(139, 0, 0, 1); /* border de color primario darkred */
+  border: solid 36px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
   padding: 24px;
@@ -1491,16 +1492,19 @@ StScrollBar {
 
 /* Top Bar */
 #panel {
-  background-color: rgba(33, 37, 43, 0.81);
-  border: solid 6px rgba(139, 0, 0, 0.18) !important;
+  background-color: transparent;
+  background-color: rgba(33, 37, 43, 0.88);
+  border: solid 1px rgba(139, 0, 0, 0.72) !important;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.72);
   font-weight: bold;
-  height: 2.2em;
+  height: 3em;
   transition-duration: 250ms; }
   #panel.unlock-screen, #panel.login-screen, #panel:overview {
-    background-color: rgba(33, 37, 43, 0.81);
-    border-top: solid 6px rgba(139, 0, 0, 0.18) !important; /* border de color primario darkred */
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.72); }
+    /* background-color: transparent; */
+    background-color: rgba(33, 37, 43, 0.88);
+    border-top: solid 1px rgba(139, 0, 0, 0.72) !important;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.72);
+  }
   #panel .panel-button {
     font-weight: bold;
     color: darkkhaki;
@@ -1566,7 +1570,10 @@ StScrollBar {
     #panel.unlock-screen .panel-button.screen-recording-indicator:active, #panel.unlock-screen .panel-button.screen-recording-indicator:overview, #panel.unlock-screen .panel-button.screen-recording-indicator:focus, #panel.unlock-screen .panel-button.screen-recording-indicator:checked, #panel.login-screen .panel-button.screen-recording-indicator:active, #panel.login-screen .panel-button.screen-recording-indicator:overview, #panel.login-screen .panel-button.screen-recording-indicator:focus, #panel.login-screen .panel-button.screen-recording-indicator:checked, #panel:overview .panel-button.screen-recording-indicator:active, #panel:overview .panel-button.screen-recording-indicator:overview, #panel:overview .panel-button.screen-recording-indicator:focus, #panel:overview .panel-button.screen-recording-indicator:checked {
       box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.85); }
   #panel.unlock-screen .panel-button:hover, #panel.login-screen .panel-button:hover, #panel:overview .panel-button:hover {
-    box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.1); }
+    color: #21252b;
+    background-color: darkkhaki;
+    /* box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.1); */
+  }
     #panel.unlock-screen .panel-button.clock-display:hover, #panel.login-screen .panel-button.clock-display:hover, #panel:overview .panel-button.clock-display:hover {
       box-shadow: none; }
       #panel.unlock-screen .panel-button.clock-display:hover .clock, #panel.login-screen .panel-button.clock-display:hover .clock, #panel:overview .panel-button.clock-display:hover .clock {
@@ -1620,11 +1627,12 @@ StScrollBar {
   spacing: 12px; }
 
 #overviewGroup {
-  background-color: #21252b;
+  background-color: rgba(33, 37, 43, 1);
   background-image: url('assets/grad_bg.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* backdrop-filter: url('assets/grad_bg.svg'#filter) blur(40px) saturate(150%);  :( */
 }
 
 .overview-controls {
@@ -1657,10 +1665,10 @@ StScrollBar {
     background-color: rgba(225, 225, 225, 0.91); }
 
 .workspace-background { /* areas de trabajo */
-  border-radius: 30px;
+  border-radius: 48px;
   background-color: rgba(0, 0, 0, 0.72);
-  border: solid 6px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
-  padding: 18px;}
+  border: solid 36px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
+  padding: 12px;}
 
 .search-entry { /* buscador */
   color: darkkhaki;
@@ -2678,27 +2686,19 @@ StScrollBar {
 /* Overrides */
 #panel, #panel.solid {
   font-weight: normal;
-  background-color: rgba(33, 37, 43, 0.81);
-  box-shadow: 0 0 6px #21252b;
-  /* background-gradient-direction: vertical;
-  background-gradient-end: #ebe8e6;
-  border-top-color: #666; */
-  /* we don't support non-uniform border-colors and
-                             use the top border color for any border, so we
-                             need to set it even if all we want is a bottom
-                             border */
-  /* border-bottom: 1px solid #666; */
+  /* background-color: transparent; */
+  background-color: rgba(33, 37, 43, 0.88);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.72);
   app-icon-bottom-clip: 0px; }
   #panel:overview, #panel.solid:overview {
-    background-color: rgba(33, 37, 43, 0.81);
-    /* background-gradient-end: #21252b; */
-    /* border-top-color: #21252b; */
-    /* border-bottom: 1px solid #21252b; */
+    /* background-color: transparent; */
+    background-color: rgba(33, 37, 43, 0.88);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.72);
   }
     #panel:overview .panel-button, #panel.solid:overview .panel-button {
       color: darkkhaki;
-    background-color: darkred; /* color buttons */
-  }
+      background-color: darkred; /* color buttons */
+    }
   #panel .panel-button, #panel.solid .panel-button {
     -natural-hpadding: 12px;
     -minimum-hpadding: 6px;
