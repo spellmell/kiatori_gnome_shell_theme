@@ -342,19 +342,21 @@ StEntry {
     background-image: url("resource:///org/gnome/shell/theme/toggle-on-light.svg"); }
 
 /* Slider */
-.slider {
-  -barlevel-height: 4px;
-  -barlevel-background-color: rgba(0, 0, 0, 0.2);
-  -barlevel-border-width: 2px;
-  -barlevel-border-color: #21252b;
-  -barlevel-active-background-color: darkred;
-  -barlevel-active-border-color: #21252b;
-  -barlevel-overdrive-color: #e01b24;
+.slider { /* control del volumen */
+  height: 72px;
+  color: darkred;
+  -barlevel-height: 36px;
+  -barlevel-background-color: #21252b;
+  -barlevel-border-width: 18px;
+  -barlevel-border-color: transparent;
+  -barlevel-active-background-color: #575859;
+  -barlevel-active-border-color: transparent;
+  -barlevel-overdrive-color: transparent;
   -barlevel-overdrive-border-color: #21252b;
-  -barlevel-overdrive-separator-width: 1px;
-  -slider-handle-radius: 8px;
-  -slider-handle-border-width: 0;
-  -slider-handle-border-color: #21252b; }
+  -barlevel-overdrive-separator-width: 3px;
+  -slider-handle-radius: 24px;
+  -slider-handle-border-width: 6px;
+  -slider-handle-border-color: darkkhaki; }
 
 /* Scrollbars */
 StScrollView.vfade {
@@ -370,21 +372,21 @@ StScrollBar {
     min-width: 18px;
     min-height: 18px; 
     border-radius: 72px;
-    background-color: rgba(189, 183, 107, 0.81); /* darkkhaki */ }
+    background-color: rgba(139, 0, 0, 1); /* darkkhaki */ }
   StScrollBar StBin#trough {
     border-radius: 72px;
     background-color: rgba(33, 37, 43, 0.81); /* #21252b */ }
   StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
     border-radius: 72px;
-    background-color: rgba(139, 0, 0, 0.72);
+    background-color: rgba(189, 183, 107, 0.81);
     border: solid 6px rgba(33, 37, 43, 0.81);
     transition: 500ms all ease; }
     StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
       border-radius: 72px;
-      background-color: rgba(139, 0, 0, 0.72); }
+      background-color: rgba(189, 183, 107, 0.81); }
     StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
       border-radius: 72px;
-      background-color: rgba(139, 0, 0, 0.72); }
+      background-color: rgba(189, 183, 107, 0.81); }
 
 /* Popovers/Menus */
 .popup-menu-boxpointer, .candidate-popup-boxpointer {
@@ -1490,13 +1492,15 @@ StScrollBar {
 /* Top Bar */
 #panel {
   background-color: rgba(33, 37, 43, 0.81);
-  border-top: solid 6px rgba(139, 0, 0, 0.72) !important; /* border de color primario darkred */
+  border: solid 6px rgba(139, 0, 0, 0.18) !important;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.72);
   font-weight: bold;
   height: 2.2em;
   transition-duration: 250ms; }
   #panel.unlock-screen, #panel.login-screen, #panel:overview {
     background-color: rgba(33, 37, 43, 0.81);
-    border-top: solid 6px rgba(139, 0, 0, 0.72) !important; /* border de color primario darkred */ }
+    border-top: solid 6px rgba(139, 0, 0, 0.18) !important; /* border de color primario darkred */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.72); }
   #panel .panel-button {
     font-weight: bold;
     color: darkkhaki;
@@ -1652,10 +1656,11 @@ StScrollBar {
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(225, 225, 225, 0.91); }
 
-.workspace-background {
+.workspace-background { /* areas de trabajo */
   border-radius: 30px;
-  box-shadow: 0 4px 16px 4px rgba(169, 169, 169, 0.26); }
-
+  background-color: rgba(0, 0, 0, 0.72);
+  border: solid 6px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
+  padding: 18px;}
 
 .search-entry { /* buscador */
   color: darkkhaki;
@@ -2025,7 +2030,7 @@ StScrollBar {
   border-radius: 3px;
   padding: 0px; }
 
-.ripple-pointer-location {
+.ripple-pointer-location { /* localizador del puntero con ctrl, cuando está activo */
   width: 50px;
   height: 50px;
   border-radius: 25px;
