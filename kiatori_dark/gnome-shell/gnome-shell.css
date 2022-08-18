@@ -1918,13 +1918,13 @@ StScrollBar {
   page-padding-right: 18px; }
 
 /* App Icons */
-/* .show-apps .show-apps-icon {
+.show-apps .show-apps-icon {
   color: transparent;
-  background-image: url('assets/applogo.svg');
+  background-image: url('assets/applogo.svg') !important;
   background-size: contain;
   border-radius: 6px;
   padding: 3px;
-} */
+}
 
 .app-well-app .overview-icon, .grid-search-result .overview-icon {
   background-color: #21252b; }
