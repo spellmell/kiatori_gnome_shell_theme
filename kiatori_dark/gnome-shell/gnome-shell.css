@@ -1690,7 +1690,7 @@ StScrollBar {
   padding: 6px 12px; }
 
 .window-close, .screenshot-ui-close-button {
-  background-color: rgba(237, 237, 237, 0.91);
+  background-color: darkred;
   color: darkkhaki;
   border-radius: 72px; /* cerrar ventana de aplicacion en overview */
   padding: 3px;
@@ -1700,10 +1700,11 @@ StScrollBar {
   .window-close StIcon, .screenshot-ui-close-button StIcon {
     icon-size: 24px; }
   .window-close:hover, .screenshot-ui-close-button:hover {
-    background-color: #575859; }
+    color: #21252b;
+    background-color: darkkhaki; }
   .window-close:active, .screenshot-ui-close-button:active {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(225, 225, 225, 0.91); }
+    color: darkkhaki;
+    background-color: #575859; }
 
 .workspace-background { /* areas de trabajo */
   border-radius: 48px;
