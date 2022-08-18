@@ -271,6 +271,7 @@ stage {
 /* inputs */
 StEntry {
   padding: 18px;
+  text-align: center;
   color: darkkhaki;
   font-size: 16pt;
   font-weight: 200;
@@ -327,7 +328,7 @@ StEntry {
     padding: 0 4px; }
   StEntry StIcon.peek-password {
     text-align: center;
-    color: darkkhaki;
+    color: darkkhaki; /* color icono mostrar ocultar contraseña */
     icon-size: 24px;
     padding: 0 4px; }
   StEntry StLabel.hint-text {
@@ -340,11 +341,13 @@ StEntry {
 
 /* Check Boxes */
 .check-box StBoxLayout {
-  spacing: .8em; }
+  spacing: 1em; }
 
 .check-box StBin {
+  margin-left: 50px;
   width: 24px;
   height: 24px;
+  text-align: leftr;
   background-image: url("resource:///org/gnome/shell/theme/checkbox-off-light.svg"); }
 
 .check-box:focus StBin {
@@ -479,7 +482,7 @@ StScrollBar {
 
 .popup-menu-arrow,
 .popup-menu-icon {
-  icon-size: 24px !important; /* iconos en menus (no apps), extensiones shutdown, etc */
+  icon-size: 18px !important; /* iconos en menus (no apps), extensiones shutdown, etc */
 } 
 
 .popup-sub-menu {
@@ -2116,7 +2119,8 @@ StScrollBar {
   color: darkkhaki;
   border-radius: 72px;
   border: solid 6px rgba(139, 0, 0, 0.81);
-  icon-size: 8em; }
+  icon-size: 8em;
+ }
   .user-icon:hover {
     color: darkkhaki; }
   .user-icon StIcon {
