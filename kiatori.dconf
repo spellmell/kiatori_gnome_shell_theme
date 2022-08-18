@@ -7,7 +7,7 @@ unpin-button=false
 name='_KIATORITHEME_'
 
 [org/gnome/shell/extensions/just-perfection]
-activities-button-icon-path='file:///home/_USERNAME_/.themes/kiatori/kiatori/_KIATORITHEME_/gnome-shell/assets/applogo.svg'
+activities-button-icon-path='file:///home/_USERNAME_/.themes/_KIATORITHEME_/gnome-shell/assets/applogo.svg'
 activities-button-label=false
 clock-menu-position=1
 notification-banner-position=5

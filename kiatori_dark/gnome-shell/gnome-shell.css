@@ -1693,6 +1693,7 @@ StScrollBar {
   background-color: darkred;
   color: darkkhaki;
   border-radius: 72px; /* cerrar ventana de aplicacion en overview */
+  box-shadow: 0 0 6px #21252b;
   padding: 3px;
   height: 30px;
   width: 30px;
