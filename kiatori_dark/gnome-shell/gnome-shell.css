@@ -599,13 +599,13 @@ StScrollBar {
   .datemenu-today-button:focus {
     color: darkkhaki;
     background-color: #575859;
-    /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.6); */ }
+  }
     .datemenu-today-button:focus:hover {
       background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+    }
     .datemenu-today-button:focus:active {
       background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+    }
   .datemenu-today-button:hover {
     color: darkkhaki;
     background-color: #575859; }
@@ -718,23 +718,25 @@ StScrollBar {
 .events-button {
   border-radius: 6px;
   margin: 4px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   color: darkkhaki;
-  background-color: #575859;
-  padding: 12px; }
+  background-color: darkred;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
+  padding: 18px; }
   .events-button:focus {
     color: darkkhaki;
     background-color: #575859;
-    /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.6); */ }
+  }
     .events-button:focus:hover {
-      background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+      color: #21252b;
+      background-color: darkkhaki;
+    }
     .events-button:focus:active {
+      color: darkkhaki;
       background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+    }
   .events-button:hover {
-    color: darkkhaki;
-    background-color: #575859; }
+    color: #21252b;
+    background-color: darkkhaki; }
   .events-button:active {
     color: darkkhaki;
     background-color: #575859; }
@@ -742,8 +744,13 @@ StScrollBar {
     spacing: 6px; }
   .events-button .events-list {
     spacing: 12px; }
-  .events-button .events-title {
-    color: #575859;
+  .events-button .events-title { /* titulos eventos agenda */
+    font-size: 12pt;
+    font-weight: 700;
+    color: darkkhaki;
+    background-color: #21252b;
+    border-radius: 6px;
+    padding: 6px;
     margin-bottom: 4px; }
   .events-button .event-time {
     color: #575859; }
@@ -752,23 +759,24 @@ StScrollBar {
 .world-clocks-button {
   border-radius: 6px;
   margin: 4px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
   color: darkkhaki;
-  background-color: #575859;
+  background-color: #21252b;
   padding: 12px; }
   .world-clocks-button:focus {
     color: darkkhaki;
     background-color: #575859;
     /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.6); */ }
     .world-clocks-button:focus:hover {
-      background-color: #575859;
+      color: #21252b !important;
+      background-color: darkkhaki !important;
       /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
     .world-clocks-button:focus:active {
       background-color: #575859;
       /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
   .world-clocks-button:hover {
-    color: darkkhaki;
-    background-color: #575859; }
+    color: #21252b !important;
+    background-color: darkkhaki !important; }
   .world-clocks-button:active {
     color: darkkhaki;
     background-color: #575859; }
@@ -776,7 +784,11 @@ StScrollBar {
     spacing-rows: 6px;
     spacing-columns: 12px; }
   .world-clocks-button .world-clocks-header {
-    color: #575859; }
+    padding: 6px;
+    color: darkkhaki;
+    background-color: darkred;
+    border-radius: 6px;
+  }
   .world-clocks-button .world-clocks-city {
     color: darkkhaki; }
   .world-clocks-button .world-clocks-time {
@@ -786,7 +798,7 @@ StScrollBar {
     .world-clocks-button .world-clocks-time:rtl {
       text-align: left; }
   .world-clocks-button .world-clocks-timezone {
-    color: #575859; }
+    color: darkkhaki; }
 
 /* Weather */
 .weather-button {
@@ -832,7 +844,7 @@ StScrollBar {
 
 /* Message List */
 .message-list {
-  width: 29em;
+  width: 48em; /* ancho de las alertas, necesita mas espacio para titulos de reproductores */
   border: solid rgba(0, 0, 0, 0.3); }
   .message-list:ltr {
     margin-left: 0;
@@ -876,27 +888,30 @@ StScrollBar {
       border-color: rgba(53, 132, 228, 0.6); }
 
 .message {
-  border-radius: 6px;
-  margin: 4px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 36px 6px 6px 36px;
+  margin: 3px;
+  padding: 3px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
   color: darkkhaki;
-  background-color: #575859; }
+  background-color: rgba(33, 37, 43, 0.81); }
   .message:focus {
     color: darkkhaki;
-    background-color: #575859;
-    /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.6); */ }
+    background-color: rgba(139, 0, 0, 0.81);
+  }
     .message:focus:hover {
-      background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+      color: darkkhaki !important;
+      background-color: rgba(139, 0, 0, 0.81);
+    }
     .message:focus:active {
+      color: darkkhaki;
       background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+    }
   .message:hover {
-    color: darkkhaki;
-    background-color: rgba(245, 245, 244, 0.99); }
+    color: darkkhaki !important;
+    background-color: rgba(139, 0, 0, 0.81); }
   .message:active {
     color: darkkhaki;
-    background-color: #575859; }
+    background-color: rgba(139, 0, 0, 0.81); }
   .message .message-icon-bin {
     padding: 18px; }
     .message .message-icon-bin:ltr {
@@ -912,16 +927,22 @@ StScrollBar {
   .message .message-content {
     spacing: 4px;
     padding: 9px;
-    margin-bottom: 8px; }
-  .message .message-title {
-    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .message .message-title { /* en alertas del reloj*/
+    color: darkkhaki;
+    font-size: 12pt;
+    font-weight: 700;
     /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
     padding-top: 0.57em; }
   .message .message-secondary-bin {
+    font-size: 10pt;
+    font-weight: 200;
     padding: 0 8px; }
     .message .message-secondary-bin > .event-time {
-      color: rgba(0, 0, 0, 0.3);
-      font-size: 9pt;
+      color: khaki;
+      font-size: 10pt;
+      font-weight: 200;
       /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
       padding-bottom: 0.13em; }
       .message .message-secondary-bin > .event-time:ltr {
@@ -946,14 +967,16 @@ StScrollBar {
 
 /* Media Controls */
 .message-media-control {
-  max-width: 1em;
-  max-height: 1em;
+  max-width: 0.72em;
+  max-height: 0.72em;
   padding: 1em;
   margin: 6em 1px;
   margin-bottom: 1em;
-  border-radius: 6px;
-  color: #21252b; 
-  background-color: darkkhaki;}
+  border-radius: 72px;
+  color: darkkhaki; 
+  background-color: #21252b;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
+}
   .message-media-control:hover {
     background-color: darkred;
     color: darkkhaki; }
@@ -967,16 +990,13 @@ StScrollBar {
   .message-media-control:last-child:rtl {
     margin-left: 12px; }
 
-.media-message-cover-icon {
-  icon-size: 6em !important;
-  padding: 1em;
-  border-radius: 6px; }
-  .media-message-cover-icon.fallback {
-    color: darkkhaki;
-    background-color: rgba(33, 37, 43, 1);
-    border: 1px solid #21252b;
-    border-radius: 6px;
-    icon-size: 6em !important;
+.media-message-cover-icon, .media-message-cover-icon.fallback {
+  color: darkkhaki;
+    background-color: rgba(139, 0, 0, 0.81);
+    border: solid 6px darkkhaki;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
+    border-radius: 72px;
+    icon-size: 3em !important;
     padding: 1em; }
 
 .candidate-popup-content {
@@ -2331,21 +2351,27 @@ StScrollBar {
 
 /* Looking Glass */
 #LookingGlassDialog {
-  background-color: rgba(33, 37, 43, 1);
-  border-radius: 0 0 16px 16px;
-  border-top-width: 0;
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  margin-top: 36px;
   color: darkkhaki;
-  padding: 6px;
-  spacing: 6px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
+  font-size: 11pt;
+  background-color: rgba(33, 37, 43, 0.88) /* #21252b */ ;
+  background-image: url('assets/grad_bg.svg');
+  border-radius: 72px 18px 72px 72px;
+  border: solid 36px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
+  box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
+                    0 0 18 black;
+  padding: 18px;
+  spacing: 6px; }
   #LookingGlassDialog > #Toolbar {
+    box-shadow: 0 0 18px black;
     border: none;
     padding: 6px;
     border-radius: 6px;
     background-color: #21252b;
     spacing: 6px; }
     #LookingGlassDialog > #Toolbar .lg-toolbar-button {
+      color: darkkhaki;
+      background-color: darkred;
       padding: 6px 12px; }
       #LookingGlassDialog > #Toolbar .lg-toolbar-button > StIcon {
         icon-size: 24px; }
@@ -2377,12 +2403,15 @@ StScrollBar {
     padding: 6px; }
 
 .lg-dialog StEntry {
-  background-color: rgba(255, 255, 255, 0.56);
   color: darkkhaki;
-  border-color: rgba(255, 255, 255, 0.2);
-  min-height: 22px;
-  selection-background-color: darkred;
-  selected-color: #21252b; }
+  font-size: 11pt;
+  background-color: rgba(33, 37, 43, 0.88) /* #21252b */ ;
+  border-radius: 72px 18px 72px 72px;
+  border: solid 6px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
+  box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
+                    0 0 18 black;
+  padding: 18px;
+  spacing: 6px; }
 
 .lg-dialog .shell-link {
   color: #1b6acb; }
