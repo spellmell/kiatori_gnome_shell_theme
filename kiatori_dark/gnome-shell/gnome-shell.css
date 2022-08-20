@@ -83,7 +83,7 @@ stage {
   background-color: rgba(33, 37, 43, 0.81) /* #21252b */ ;
   background-image: url('assets/grad_bg.svg');
   border-radius: 72px 18px 72px 72px;
-  border: solid 36px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
+  border: solid 18px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
   padding: 24px;
@@ -270,7 +270,7 @@ stage {
 /* Entries */
 /* inputs */
 StEntry {
-  padding: 18px;
+  padding: 12px;
   text-align: center;
   color: darkkhaki;
   font-size: 16pt;
@@ -280,7 +280,7 @@ StEntry {
   border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 18px;
+  padding: 12px;
   spacing: 6px;
   /* selection-background-color: darkred;
   selected-color: darkkhaki; */
@@ -294,7 +294,7 @@ StEntry {
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
-    padding: 18px;
+    padding: 12px;
     spacing: 6px;
   }
   StEntry:focus {
@@ -307,7 +307,7 @@ StEntry {
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
-    padding: 18px;
+    padding: 12px;
     spacing: 6px;
     }
   StEntry:insensitive {
@@ -319,7 +319,7 @@ StEntry {
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
-    padding: 18px;
+    padding: 12px;
     spacing: 6px;
   }
   StEntry StIcon.capslock-warning {
@@ -395,13 +395,13 @@ StScrollView.hfade {
   -st-hfade-offset: 68px; }
 
 StScrollBar {
-  padding: 12px;
+  padding: 8px;
   border-radius: 72px; }
   StScrollView StScrollBar {
     min-width: 18px;
     min-height: 18px; 
     border-radius: 72px;
-    background-color: rgba(139, 0, 0, 1); /* darkkhaki */ }
+    background-color: rgba(139, 0, 0, 1); /* darkred */ }
   StScrollBar StBin#trough {
     border-radius: 72px;
     background-color: rgba(33, 37, 43, 0.81); /* #21252b */ }
@@ -429,14 +429,15 @@ StScrollBar {
 
 .popup-menu-content, .candidate-popup-content { /* menus */
   color: darkkhaki;
-  font-size: 11pt;
+  font-size: 10pt;
+  font-weight: 400;
   background-color: rgba(33, 37, 43, 0.88) /* #21252b */ ;
   background-image: url('assets/grad_bg.svg');
   border-radius: 72px 18px 72px 72px;
-  border: solid 36px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
+  border: solid 18px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
-  padding: 18px;
+  padding: 18px 6px;
   spacing: 6px;
 }
 
@@ -487,7 +488,7 @@ StScrollBar {
 } 
 
 .popup-sub-menu {
-  padding: 18px;
+  padding: 12px;
   background-color: rgba(139, 0, 0, 0.36);
   border-radius: 6px; }
   .popup-sub-menu .popup-menu-ornament {
@@ -719,16 +720,16 @@ StScrollBar {
   border-radius: 6px;
   margin: 4px;
   color: darkkhaki;
-  background-color: darkred;
+  background-color: rgba(139, 0, 0, 0.72);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
-  padding: 18px; }
+  padding: 12px; }
   .events-button:focus {
     color: darkkhaki;
     background-color: #575859;
   }
     .events-button:focus:hover {
       color: #21252b;
-      background-color: darkkhaki;
+      background-color: rgba(189, 183, 107, 0.72);
     }
     .events-button:focus:active {
       color: darkkhaki;
@@ -736,10 +737,8 @@ StScrollBar {
     }
   .events-button:hover {
     color: #21252b;
-    background-color: darkkhaki; }
-  .events-button:active {
-    color: darkkhaki;
-    background-color: #575859; }
+    background-color: rgba(189, 183, 107, 0.72);
+  }
   .events-button .events-box {
     spacing: 6px; }
   .events-button .events-list {
@@ -753,83 +752,96 @@ StScrollBar {
     padding: 6px;
     margin-bottom: 4px; }
   .events-button .event-time {
-    color: #575859; }
+    color: darkkhaki !important; }
+  .events-button .event-time:hover {
+    color: #21252b !important; }
 
 /* World clocks */
 .world-clocks-button {
   border-radius: 6px;
-  margin: 4px;
+  margin: 6px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
   color: darkkhaki;
-  background-color: #21252b;
-  padding: 12px; }
+  background-color: rgba(33, 37, 43, 0.81);
+  padding: 6px; }
   .world-clocks-button:focus {
     color: darkkhaki;
-    background-color: #575859;
+    background-color: rgba(87, 88, 89, 0.72);
     /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.6); */ }
     .world-clocks-button:focus:hover {
       color: #21252b !important;
       background-color: darkkhaki !important;
       /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
     .world-clocks-button:focus:active {
-      background-color: #575859;
+      background-color: rgba(87, 88, 89, 0.72);
       /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
   .world-clocks-button:hover {
     color: #21252b !important;
-    background-color: darkkhaki !important; }
+    background-color: rgba(87, 88, 89, 0.72) !important; }
   .world-clocks-button:active {
     color: darkkhaki;
-    background-color: #575859; }
+    background-color: rgba(87, 88, 89, 0.72); }
   .world-clocks-button .world-clocks-grid {
     spacing-rows: 6px;
     spacing-columns: 12px; }
   .world-clocks-button .world-clocks-header {
+    margin: 6px;
     padding: 6px;
+    font-size: 12pt;
+    font-weight: 700;
     color: darkkhaki;
     background-color: darkred;
     border-radius: 6px;
   }
-  .world-clocks-button .world-clocks-city {
-    color: darkkhaki; }
-  .world-clocks-button .world-clocks-time {
+  .world-clocks-button .world-clocks-city, .world-clocks-button .world-clocks-time, .world-clocks-button .world-clocks-timezone {
+    padding: 0px 6px;
+    font-size: 10pt;
+    font-weight: 400;
     color: darkkhaki; }
     .world-clocks-button .world-clocks-time:ltr {
       text-align: right; }
     .world-clocks-button .world-clocks-time:rtl {
       text-align: left; }
-  .world-clocks-button .world-clocks-timezone {
-    color: darkkhaki; }
 
 /* Weather */
 .weather-button {
   border-radius: 6px;
-  margin: 4px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  margin: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
   color: darkkhaki;
-  background-color: #575859;
-  padding: 12px; }
+  font-size: 10pt;
+  font-weight: 400;
+  background-color: rgba(33, 37, 43, 0.81);
+  padding: 6px; }
   .weather-button:focus {
     color: darkkhaki;
-    background-color: #575859;
-    /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.6); */ }
+    background-color: rgba(87, 88, 89, 0.72);
+  }
     .weather-button:focus:hover {
-      background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+      background-color: rgba(87, 88, 89, 0.72);
+    }
     .weather-button:focus:active {
-      background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+      background-color: rgba(87, 88, 89, 0.72);
+    }
   .weather-button:hover {
     color: darkkhaki;
-    background-color: #575859; }
+    background-color: rgba(87, 88, 89, 0.72); }
   .weather-button:active {
     color: darkkhaki;
-    background-color: #575859; }
+    background-color: rgba(87, 88, 89, 0.72); }
   .weather-button .weather-box {
     spacing: 10px; }
   .weather-button .weather-header-box {
-    spacing: 6px; }
+    margin: 6px;
+    padding: 6px;
+    spacing: 6px;
+    border-radius: 6px;
+    color: darkkhaki;
+    background-color: darkred;}
   .weather-button .weather-header {
-    color: #575859; }
+    font-size: 12pt;
+    font-weight: 700;
+    color: darkkhaki; }
     .weather-button .weather-header.location {
       font-weight: normal; }
   .weather-button .weather-grid {
@@ -841,10 +853,14 @@ StScrollBar {
     padding-bottom: 0.4em; }
   .weather-button .weather-forecast-icon {
     icon-size: 2.18em; }
+  .weather-button .weather-forecast-temp {
+    font-size: 10pt !important;
+    font-weight: 400 !important;
+  }
 
 /* Message List */
 .message-list {
-  width: 48em; /* ancho de las alertas, necesita mas espacio para titulos de reproductores */
+  width: 36em; /* ancho de las alertas, necesita mas espacio para titulos de reproductores */
   border: solid rgba(0, 0, 0, 0.3); }
   .message-list:ltr {
     margin-left: 0;
@@ -913,7 +929,7 @@ StScrollBar {
     color: darkkhaki;
     background-color: rgba(139, 0, 0, 0.81); }
   .message .message-icon-bin {
-    padding: 18px; }
+    padding: 12px; }
     .message .message-icon-bin:ltr {
       padding-right: 6px; }
     .message .message-icon-bin:rtl {
@@ -931,18 +947,18 @@ StScrollBar {
   }
   .message .message-title { /* en alertas del reloj*/
     color: darkkhaki;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 700;
     /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
     padding-top: 0.57em; }
   .message .message-secondary-bin {
-    font-size: 10pt;
-    font-weight: 200;
+    font-size: 12pt;
+    font-weight: 400;
     padding: 0 8px; }
     .message .message-secondary-bin > .event-time {
-      color: khaki;
+      color: darkkhaki !important;
       font-size: 10pt;
-      font-weight: 200;
+      font-weight: 400;
       /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
       padding-bottom: 0.13em; }
       .message .message-secondary-bin > .event-time:ltr {
@@ -1050,7 +1066,7 @@ StScrollBar {
   background-color: rgba(33, 37, 43, 0.81) /* #21252b */ ;
   background-image: url('assets/grad_bg.svg');
   border-radius: 72px 18px 72px 72px;
-  border: solid 36px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
+  border: solid 18px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
   padding: 24px;
@@ -1336,7 +1352,7 @@ StScrollBar {
   spacing: 24px; }
 
 .switcher-list {
-  padding: 18px;
+  padding: 12px;
   border-radius: 6px;
 }
   .switcher-list .switcher-list-item-container {
@@ -1411,11 +1427,11 @@ StScrollBar {
     icon-size: 32px; }
 
 .screenshot-ui-panel {
-  padding: 18px;
+  padding: 12px;
   padding-bottom: 12px;
   margin-bottom: 4em;
   border-radius: 6px;
-  border: solid 36px rgba(139, 0, 0, 0.72);
+  border: solid 18px rgba(139, 0, 0, 0.72);
   spacing: 12px; }
 
 .screenshot-ui-close-button {
@@ -1740,7 +1756,7 @@ StScrollBar {
 .workspace-background { /* areas de trabajo */
   border-radius: 48px;
   background-color: rgba(0, 0, 0, 0.72);
-  border: solid 36px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
+  border: solid 18px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
   padding: 12px;}
 
 .search-entry { /* buscador */
@@ -1751,7 +1767,7 @@ StScrollBar {
   border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 18px;
+  padding: 12px;
   spacing: 6px;
   /* margin-bottom: 12px; */
   }
@@ -1794,10 +1810,10 @@ StScrollBar {
   color: darkkhaki;
   background-color: rgba(33, 37, 43, 0.81);
   border-radius: 72px 18px 72px 72px;
-  border: solid 36px rgba(139, 0, 0, 0.72);
+  border: solid 18px rgba(139, 0, 0, 0.72);
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 18px;
+  padding: 12px;
   spacing: 6px; }
 
 .list-search-result, .search-provider-icon {
@@ -2023,10 +2039,10 @@ StScrollBar {
   font-size: 9pt;
   background-color: rgba(33, 37, 43, 0.81);
   border-radius: 72px;
-  border: solid 36px rgba(139, 0, 0, 0.72); /* darkred first color */
+  border: solid 18px rgba(139, 0, 0, 0.72); /* darkred first color */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 18px;
+  padding: 12px;
   spacing: 6px; }
   .app-folder-dialog .folder-name-container {
     padding: 0px;
@@ -2163,7 +2179,7 @@ StScrollBar {
   .user-icon StIcon {
     background-color: rgba(33, 37, 43, 0.18);
     border-radius: 6px;
-    padding: 18px;
+    padding: 12px;
     width: 2.725em;
     height: 2.725em; }
   .user-icon.user-avatar {
@@ -2172,7 +2188,7 @@ StScrollBar {
 .user-widget.vertical .user-icon {
   icon-size: 8em; }
   .user-widget.vertical .user-icon StIcon {
-    padding: 18px;
+    padding: 12px;
     padding-top: 18px;
     padding-bottom: 18px;
     width: 8em;
@@ -2368,10 +2384,10 @@ StScrollBar {
   background-color: rgba(33, 37, 43, 0.88) /* #21252b */ ;
   background-image: url('assets/grad_bg.svg');
   border-radius: 72px 18px 72px 72px;
-  border: solid 36px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
+  border: solid 18px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
-  padding: 18px;
+  padding: 12px;
   spacing: 6px; }
   #LookingGlassDialog > #Toolbar {
     box-shadow: 0 0 18px black;
@@ -2421,7 +2437,7 @@ StScrollBar {
   border: solid 6px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
-  padding: 18px;
+  padding: 12px;
   spacing: 6px; }
 
 .lg-dialog .shell-link {
