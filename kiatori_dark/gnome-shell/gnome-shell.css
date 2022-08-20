@@ -30,16 +30,9 @@ c/* Kiatori (Dark) theme for Gnome 42.*^
 
 /*
  font download: https://fonts.google.com/download?family=Raleway
- */
 
-/* defult values:
-font light color: rgba(189, 183, 107, 1) al 0.72% rgba(253, 245, 230, 0.72)
-font dark color: #232323 al 0.72% rgba(35, 35, 35, 0.72)
-background panel color: #21252b, rgba(33, 37, 43, 1)
-background buttons colors: #24282e, rgba(36, 40, 46, 1)
-border: solid 1px rgba(253, 245, 230, 0.09)
-box-shadow: 0 0 6px rgba(33, 33, 33, 0.36) 
-*/
+ fuentes candidatas: Raleway*, Orbitron*, Goldman, Fredoka One, Lobster, Righteous, Baloo Chettan 2, Silkscreen
+ */
 
 /* Global Values */
 stage {
@@ -48,12 +41,12 @@ stage {
   color: darkkhaki;
   font-size: 12pt;
   font-weight:400;
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important; /* no respeta herencia lpm */
 }
 
 /* Common Stylings */
 .screenshot-ui-panel, .workspace-switcher, .switcher-list, .resize-popup, .osd-monitor-label, .osd-window {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki;
   background-color: rgba(33, 37, 43, 0.81); /* #21252b */
   background-image: url('assets/grad_bg.svg') !important;
@@ -65,12 +58,12 @@ stage {
   spacing: 6px; }
 
 .workspace-thumbnails .workspace-thumbnail {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki;
   background-color: rgba(139, 0, 0, 0.72); }
 
 .app-well-app.app-folder .overview-icon, .app-folder.grid-search-result .overview-icon, .app-well-app .overview-icon, .grid-search-result .overview-icon, .dash-item-container .show-apps .overview-icon, .list-search-result, .search-provider-icon, .switcher-list .item-box {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   border-radius: 18px;
   padding: 6px;
   spacing: 6px;
@@ -79,7 +72,7 @@ stage {
   text-align: center; }
 
 .modal-dialog { /* dialogos emergentes cerrar, apagar, etc */
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki;
   font-weight: 400;
   font-size: 10pt;
@@ -93,7 +86,7 @@ stage {
   spacing: 6px; }
 
 #LookingGlassDialog > #Toolbar .lg-toolbar-button, .app-folder-dialog .folder-name-container .edit-folder-button, .button {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   border-radius: 6px;
   border-style: solid;
   border-width: 1px;
@@ -129,8 +122,8 @@ stage {
       background-color: #575859; }
 
 .modal-dialog .modal-dialog-linked-button, .hotplug-notification-item, .notification-banner .notification-button {
-  font-family: "Righteous" !important;
-  padding: 12px;
+  font-family: "Raleway" !important;
+  padding: 18px;
   font-weight: bold !important;
   color: darkkhaki;
   background-color: darkred; }
@@ -182,7 +175,7 @@ stage {
 
 /* capturas de pantalla */
 .screenshot-ui-show-pointer-button, .screenshot-ui-type-button {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   background-color: transparent;
   background-color: none; }
   .screenshot-ui-show-pointer-button:insensitive, .screenshot-ui-type-button:insensitive {
@@ -225,54 +218,54 @@ stage {
 
 /* General Typography */
 .app-folder-dialog .folder-name-container .folder-name-label, .app-folder-dialog .folder-name-container .folder-name-entry, .search-statustext {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: 700;
   font-size: 18pt; }
 
 .lg-debug-flags-header, .message-dialog-content .message-dialog-title, .message-list .message-list-placeholder, .datemenu-today-button .date-label {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: 700;
   font-size: 14pt; }
 
 .nm-dialog-airplane-headline {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: 700;
   font-size: 16pt; }
 
 .message-dialog-content .message-dialog-title.lightweight, .headline {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: 700;
   font-size: 12pt; }
 
 .lg-extension-name, .osd-window, .nm-dialog-header, .dialog-list .dialog-list-title, .message-list-controls, .weather-button .weather-forecast-temp, .weather-button .weather-header, .world-clocks-button .world-clocks-time, .world-clocks-button .world-clocks-header, .events-button .events-title, .calendar .calendar-month-header .calendar-month-label, .datemenu-today-button .day-label, .popup-menu-ornament {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: 700;
   font-size: 12pt; }
 
 .app-menu .popup-inactive-menu-item:first-child > StLabel {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: 700;
   font-size: 10pt; }
 
 .login-dialog-not-listed-label, .lg-completions-text, .caps-lock-warning-label, #dash, .icon-label-button-container, .prompt-dialog-error-label,
 .prompt-dialog-info-label,
 .prompt-dialog-null-label, .run-dialog .run-dialog-description, .dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description, .weather-button .weather-forecast-time, .world-clocks-button .world-clocks-timezone, .events-button .event-time {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: 400;
   font-size: 10pt; }
 
 .calendar .calendar-day-base.calendar-day-heading, .calendar .calendar-day-base {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: 400;
   font-size: 10pt; }
 
 .unlock-dialog-clock-time, #panel, .weather-button .weather-forecast-time, .world-clocks-button .world-clocks-timezone, .world-clocks-button .world-clocks-time, .events-button .event-time, .calendar .calendar-day-base {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-feature-settings: "tnum"; }
 
 /* WIDGETS */
 .shell-link {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki; }
   .shell-link:hover {
     color: darkred; }
@@ -286,8 +279,8 @@ stage {
 /* Entries */
 /* inputs */
 StEntry {
-  font-family: "Righteous" !important;
-  padding: 12px;
+  font-family: "Raleway" !important;
+  padding: 18px;
   text-align: center;
   color: darkkhaki;
   font-size: 16pt;
@@ -297,7 +290,7 @@ StEntry {
   border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 12px;
+  padding: 18px;
   spacing: 6px;
   /* selection-background-color: darkred;
   selected-color: darkkhaki; */
@@ -311,7 +304,7 @@ StEntry {
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
-    padding: 12px;
+    padding: 18px;
     spacing: 6px;
   }
   StEntry:focus {
@@ -324,7 +317,7 @@ StEntry {
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
-    padding: 12px;
+    padding: 18px;
     spacing: 6px;
     }
   StEntry:insensitive {
@@ -336,7 +329,7 @@ StEntry {
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
-    padding: 12px;
+    padding: 18px;
     spacing: 6px;
   }
   StEntry StIcon.capslock-warning {
@@ -415,23 +408,26 @@ StScrollBar {
   padding: 8px;
   border-radius: 72px; }
   StScrollView StScrollBar {
-    min-width: 18px;
-    min-height: 18px; 
-    border-radius: 72px;
-    background-color: rgba(139, 0, 0, 1); /* darkred */ }
+    min-width: 28px;
+    min-height: 28px; 
+    margin-bottom: 18px;
+    border-radius: 72px 18px 72px 72px;
+    background-color: rgba(139, 0, 0, 1); /* darkred */ 
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
+  }
   StScrollBar StBin#trough {
-    border-radius: 72px;
+    border-radius: 72px 18px 72px 72px;
     background-color: rgba(33, 37, 43, 0.81); /* #21252b */ }
   StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
-    border-radius: 72px;
+    border-radius: 72px 18px 72px 72px;
     background-color: rgba(189, 183, 107, 0.81);
     border: solid 6px rgba(33, 37, 43, 0.81);
     transition: 500ms all ease; }
     StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
-      border-radius: 72px;
+      border-radius: 72px 18px 72px 72px;
       background-color: rgba(189, 183, 107, 0.81); }
     StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
-      border-radius: 72px;
+      border-radius: 72px 18px 72px 72px;
       background-color: rgba(189, 183, 107, 0.81); }
 
 /* Popovers/Menus */
@@ -445,7 +441,7 @@ StScrollBar {
     margin-bottom: 1.75em; }
 
 .popup-menu-content, .candidate-popup-content { /* menus */
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki;
   font-size: 10pt;
   font-weight: 400;
@@ -494,6 +490,10 @@ StScrollBar {
   .popup-menu-item .toggle-switch:rtl {
     margin-right: 4px; }
 
+/* .popup-menu-item:nth-last-child(0n+1) {
+  border-radius: 6px 6px 36px 36px;
+} */
+
 .popup-inactive-menu-item {
   color: darkkhaki; }
   .popup-inactive-menu-item:insensitive {
@@ -506,16 +506,18 @@ StScrollBar {
 } 
 
 .popup-sub-menu {
-  padding: 12px;
+  padding: 18px;
   background-color: rgba(139, 0, 0, 0.36);
-  border-radius: 6px; }
+  border-radius: 6px 6px 36px 36px; }
   .popup-sub-menu .popup-menu-ornament {
     min-width: 1.09em !important; }
   .popup-sub-menu .popup-menu-item {
     border-radius: 6px;
     margin: 0; }
+    /* .popup-sub-menu .popup-menu-item:first-child {
+      border-radius: 18px 18px 6px 6px; } */
     .popup-sub-menu .popup-menu-item:last-child {
-      border-radius: 6px; }
+      border-radius: 6px 6px 18px 18px; }
     .popup-sub-menu .popup-menu-item:focus, .popup-sub-menu .popup-menu-item:hover {
       color: #21252b;
       background-color: darkkhaki !important; }
@@ -565,7 +567,7 @@ StScrollBar {
   -arrow-rise: 0px; }
 
 .aggregate-menu {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   min-width: 22em; }
   .aggregate-menu .popup-menu-ornament {
     width: 0 !important; }
@@ -581,7 +583,7 @@ StScrollBar {
     margin-right: 1em; }
 
 .app-menu {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   max-width: 27.25em; }
   .app-menu .popup-menu-ornament {
     width: 0 !important; }
@@ -592,7 +594,11 @@ StScrollBar {
 
 /* Date/Time Menu */
 #calendarArea {
-  padding: 4px; }
+  margin: 0px;
+  padding: 0px;
+  /* border-radius: 72px 18px 72px 72px;
+  background-color: #15539e; */
+}
 
 .datemenu-calendar-column {
   spacing: 6px; }
@@ -605,18 +611,20 @@ StScrollBar {
 
 /* today button (the date) */
 .datemenu-today-button {
+  margin: 6px;
+  padding: 18px;
+  color: darkkhaki;
+  /* text-align: center !important; */
+  font-size: 14pt !important;
+  font-weight: 700 !important;
   border-radius: 6px;
-  margin: 4px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #21252b;
-  background-color: none;
-  box-shadow: none !important;
-  padding: 9px; }
+  background-color: rgba(33, 37, 43, 0.81);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36) !important;
+  /* visibility: collapse !important; */
+}
   .datemenu-today-button:insensitive {
-    color: rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0);
-    background-color: #21252b;
-    color: rgba(255, 255, 255, 0.5); }
+    color: darkkhaki;
+    background-color: rgba(33, 37, 43, 0.81); }
   .datemenu-today-button:focus {
     color: darkkhaki;
     background-color: #575859;
@@ -629,20 +637,20 @@ StScrollBar {
     }
   .datemenu-today-button:hover {
     color: darkkhaki;
-    background-color: #575859; }
+    background-color: #575859 !important; }
   .datemenu-today-button:active {
     color: darkkhaki;
     background-color: #575859; }
 
 /* Calendar */
 .calendar {
+  margin: 6px;
+  margin-top: 0;
+  padding: 6px;
   border-radius: 6px;
-  margin: 4px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #21252b;
-  background-color: none;
-  box-shadow: none !important;
-  margin-top: 0; }
+  background-color: rgba(33, 37, 43, 0.81);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36) !important;
+}
   .calendar:insensitive {
     color: rgba(0, 0, 0, 0.3);
     background-color: rgba(0, 0, 0, 0);
@@ -651,13 +659,13 @@ StScrollBar {
   .calendar:focus {
     color: darkkhaki;
     background-color: #575859;
-    /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.6); */ }
+  }
     .calendar:focus:hover {
       background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+    }
     .calendar:focus:active {
       background-color: #575859;
-      /* box-shadow: inset 0 0 0 2px rgba(53, 132, 228, 0.7); */ }
+    }
   .calendar:hover {
     color: darkkhaki;
     background-color: rgba(245, 245, 244, 0.99); }
@@ -668,18 +676,29 @@ StScrollBar {
   .calendar .calendar-month-header .calendar-change-month-forward StIcon {
     icon-size: 24px; }
   .calendar .calendar-month-header .calendar-month-label {
-    color: rgba(13, 13, 13, 0.8);
+    color: darkkhaki;
+    font-size: 14pt;
+    font-weight: 700;
     padding: 8px 0; }
   .calendar .calendar-month-header .pager-button {
+    height: 36px;
+    width: 36px;
+    margin: 6px;
+    border-radius: 72px;
+    border: solid 6px rgba(189, 183, 107, 0.18);
+    color: darkkhaki; 
     background-color: #21252b;
-    height: 32px;
-    width: 32px;
-    margin: 2px;
-    border-radius: 6px; }
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.36); }
     .calendar .calendar-month-header .pager-button:hover, .calendar .calendar-month-header .pager-button:focus {
-      background-color: #575859; }
+      color: darkkhaki;
+      border: solid 6px rgba(189, 183, 107, 0.81);
+      background-color: darkred;
+    }
     .calendar .calendar-month-header .pager-button:active {
-      background-color: #ebe8e6; }
+      color: darkkhaki;
+      border: solid 6px rgba(189, 183, 107, 0.81);
+      background-color: rgba(33, 37, 43, 1);
+    }
   .calendar .calendar-day-base {
     text-align: center;
     margin: 2px;
@@ -741,8 +760,8 @@ StScrollBar {
   margin: 4px;
   color: darkkhaki;
   background-color: rgba(139, 0, 0, 0.72);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
-  padding: 12px; }
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
+  padding: 18px; }
   .events-button:focus {
     color: darkkhaki;
     background-color: #575859;
@@ -762,6 +781,7 @@ StScrollBar {
   .events-button .events-box {
     spacing: 6px; }
   .events-button .events-list {
+    font-size: 12pt;
     spacing: 12px; }
   .events-button .events-title { /* titulos eventos agenda */
     font-size: 12pt;
@@ -780,7 +800,7 @@ StScrollBar {
 .world-clocks-button {
   border-radius: 6px;
   margin: 6px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
   color: darkkhaki;
   background-color: rgba(33, 37, 43, 0.81);
   padding: 6px; }
@@ -827,7 +847,7 @@ StScrollBar {
 .weather-button {
   border-radius: 6px;
   margin: 6px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
   color: darkkhaki;
   font-size: 10pt;
   font-weight: 400;
@@ -880,9 +900,10 @@ StScrollBar {
 
 /* Message List */
 .message-list {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   width: 36em; /* ancho de las alertas, necesita mas espacio para titulos de reproductores */
-  border: solid rgba(0, 0, 0, 0.3); }
+  border: solid rgba(139, 0, 0, 0.36); /* separador vertical */
+}
   .message-list:ltr {
     margin-left: 0;
     margin-right: 4px;
@@ -925,12 +946,13 @@ StScrollBar {
       border-color: rgba(53, 132, 228, 0.6); }
 
 .message {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   border-radius: 36px 6px 6px 36px;
   margin: 3px;
   padding: 3px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
   color: darkkhaki;
+  border: solid 1px rgba(139, 0, 0, 0.36);
   background-color: rgba(33, 37, 43, 0.81); }
   .message:focus {
     color: darkkhaki;
@@ -951,7 +973,7 @@ StScrollBar {
     color: darkkhaki;
     background-color: rgba(139, 0, 0, 0.81); }
   .message .message-icon-bin {
-    padding: 12px; }
+    padding: 18px; }
     .message .message-icon-bin:ltr {
       padding-right: 6px; }
     .message .message-icon-bin:rtl {
@@ -1008,17 +1030,20 @@ StScrollBar {
   max-width: 0.72em;
   max-height: 0.72em;
   padding: 1em;
-  margin: 6em 1px;
+  margin: 5em 3px;
   margin-bottom: 1em;
   border-radius: 72px;
+  border: solid 6px rgba(189, 183, 107, 0.18);
   color: darkkhaki; 
   background-color: #21252b;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
 }
   .message-media-control:hover {
+    border: solid 6px rgba(189, 183, 107, 0.81);
     background-color: darkred;
     color: darkkhaki; }
   .message-media-control:active {
+    border: solid 6px rgba(189, 183, 107, 0.81);
     background-color: rgba(33, 37, 43, 1);
     color: darkkhaki; }
   .message-media-control:insensitive {
@@ -1080,7 +1105,7 @@ StScrollBar {
 
 /* Notifications & Message Tray */
 .notification-banner {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   min-height: 64px;
   width: 34em;
   color: darkkhaki;
@@ -1099,7 +1124,7 @@ StScrollBar {
     spacing: 0; }
 
 .summary-source-counter {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-size: 10pt;
   font-weight: bold;
   height: 1.6em;
@@ -1152,7 +1177,7 @@ StScrollBar {
 
 /* Modal Dialogs */
 .modal-dialog .modal-dialog-content-box {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   margin: 32px 40px;
   spacing: 32px;
   max-width: 28em; }
@@ -1262,7 +1287,7 @@ StScrollBar {
 
 /* Welcome dialog */
 .welcome-dialog-image {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   background-image: url("resource:///org/gnome/shell/theme/gnome-shell-start.svg");
   background-size: contain;
   /* Reasonable maximum dimensions */
@@ -1294,7 +1319,7 @@ StScrollBar {
   background-color: #21252b; }
 
 .nm-dialog-item {
-  padding: 12px; }
+  padding: 18px; }
   .nm-dialog-item:selected {
     background-color: darkred;
     border-radius: 6px;
@@ -1323,7 +1348,7 @@ StScrollBar {
 
 /* OSD */
 .osd-window {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   text-align: center;
   font-weight: bold;
   spacing: 12px;
@@ -1363,7 +1388,7 @@ StScrollBar {
 
 /* Pad OSD */
 .pad-osd-window {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   padding: 32px;
   background-color: darkkhaki; }
   .pad-osd-window .pad-osd-title-box {
@@ -1380,7 +1405,7 @@ StScrollBar {
   spacing: 24px; }
 
 .switcher-list {
-  padding: 12px;
+  padding: 18px;
   border-radius: 6px;
 }
   .switcher-list .switcher-list-item-container {
@@ -1455,7 +1480,7 @@ StScrollBar {
     icon-size: 32px; }
 
 .screenshot-ui-panel {
-  padding: 12px;
+  padding: 18px;
   padding-bottom: 12px;
   margin-bottom: 4em;
   border-radius: 6px;
@@ -1594,7 +1619,7 @@ StScrollBar {
 
 /* Top Bar */
 #panel {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   background-color: transparent;
   background-color: rgba(33, 37, 43, 0.88);
   /* border-top: solid 6px rgba(139, 0, 0, 0.72) !important; */
@@ -1603,18 +1628,18 @@ StScrollBar {
   height: 3em;
   transition-duration: 250ms; }
   #panel.unlock-screen, #panel.login-screen, #panel:overview {
-    font-family: "Righteous" !important;
+    font-family: "Raleway" !important;
     /* background-color: transparent; */
     background-color: rgba(33, 37, 43, 0.88);
     /* border-top: solid 6px rgba(139, 0, 0, 0.72) !important; */
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.72);
   }
   #panel .panel-button {
-    font-family: "Righteous" !important;
+    font-family: "Orbitron" !important; /* _FONT_BUTTONS_ */
     min-width: 3em !important;
-    font-weight: bold;
+    font-weight: 700;
     color: darkkhaki;
-    -natural-hpadding: 12px;
+    -natural-hpadding: 18px;
     -minimum-hpadding: 6px;
     transition-duration: 150ms;
     border: 3px solid #21252b;
@@ -1671,14 +1696,14 @@ StScrollBar {
       border-radius: 72px;
       border: solid 6px darkred !important;
       background-color: #21252b !important;
-      -natural-hpadding: 12px; }
+      -natural-hpadding: 18px; }
     #panel #panelActivities.panel-button:hover { /* boton actividades */
       color: darkkhaki;
       margin: 3px;
       border-radius: 72px;
       border: solid 6px darkkhaki !important;
       background-color: darkred !important;
-      -natural-hpadding: 12px; }
+      -natural-hpadding: 18px; }
   #panel.unlock-screen .panel-button:active, #panel.unlock-screen .panel-button:overview, #panel.unlock-screen .panel-button:focus, #panel.unlock-screen .panel-button:checked, #panel.login-screen .panel-button:active, #panel.login-screen .panel-button:overview, #panel.login-screen .panel-button:focus, #panel.login-screen .panel-button:checked, #panel:overview .panel-button:active, #panel:overview .panel-button:overview, #panel:overview .panel-button:focus, #panel:overview .panel-button:checked {
     box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.15); }
     #panel.unlock-screen .panel-button.clock-display:active, #panel.unlock-screen .panel-button.clock-display:overview, #panel.unlock-screen .panel-button.clock-display:focus, #panel.unlock-screen .panel-button.clock-display:checked, #panel.login-screen .panel-button.clock-display:active, #panel.login-screen .panel-button.clock-display:overview, #panel.login-screen .panel-button.clock-display:focus, #panel.login-screen .panel-button.clock-display:checked, #panel:overview .panel-button.clock-display:active, #panel:overview .panel-button.clock-display:overview, #panel:overview .panel-button.clock-display:focus, #panel:overview .panel-button.clock-display:checked {
@@ -1716,13 +1741,13 @@ StScrollBar {
     color: darkkhaki; }
 
 #appMenu {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   spacing: 6px; }
   #appMenu .label-shadow {
     color: #21252b; }
 
 #appMenu .panel-status-menu-box {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   padding: 0 6px;
   spacing: 6px; }
 
@@ -1747,7 +1772,7 @@ StScrollBar {
   spacing: 12px; }
 
 #overviewGroup {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   background-color: rgba(33, 37, 43, 1);
   background-image: url('assets/grad_bg.svg');
   background-position: center;
@@ -1792,10 +1817,10 @@ StScrollBar {
   border-radius: 48px;
   background-color: rgba(0, 0, 0, 0.72);
   border: solid 18px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
-  padding: 12px;}
+  padding: 18px;}
 
 .search-entry { /* buscador */
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki;
   font-size: 16pt;
   background-color: rgba(33, 37, 43, 0.81);
@@ -1803,7 +1828,7 @@ StScrollBar {
   border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 12px;
+  padding: 18px;
   spacing: 6px;
   /* margin-bottom: 12px; */
   }
@@ -1849,7 +1874,7 @@ StScrollBar {
   border: solid 18px rgba(139, 0, 0, 0.72);
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 12px;
+  padding: 18px;
   spacing: 6px; }
 
 .list-search-result, .search-provider-icon {
@@ -1905,7 +1930,7 @@ StScrollBar {
 
 /* Dash */
 #dash {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   margin-bottom: 3em; }
   #dash .placeholder {
     background-image: none;
@@ -1983,7 +2008,7 @@ StScrollBar {
   margin-bottom: 12px; }
 
 .dash-label {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki;
   background-color: rgba(33, 37, 43, 1);
   border-radius: 6px;
@@ -2041,7 +2066,7 @@ StScrollBar {
   background-color: #21252b; }
 
 .app-well-app .overview-icon, .grid-search-result .overview-icon {
-  padding: 12px; }
+  padding: 18px; }
 
 .app-well-app .overview-icon.overview-icon-with-label > StBoxLayout, .grid-search-result .overview-icon.overview-icon-with-label > StBoxLayout {
   spacing: 6px; }
@@ -2081,7 +2106,7 @@ StScrollBar {
   border: solid 18px rgba(139, 0, 0, 0.72); /* darkred first color */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
-  padding: 12px;
+  padding: 18px;
   spacing: 6px; }
   .app-folder-dialog .folder-name-container {
     padding: 0px;
@@ -2111,7 +2136,7 @@ StScrollBar {
     margin-bottom: 18px; }
 
 .app-folder-dialog-container {
-  padding: 12px;
+  padding: 18px;
   width: 640px;
   height: 640px; }
 
@@ -2171,11 +2196,12 @@ StScrollBar {
   visible-width: 36px;
   spacing: 18px;
   padding: 6px; }
-  .workspace-thumbnails .workspace-thumbnail {
+  .workspace-thumbnails .workspace-thumbnail { /* miniaturas de areas de trabajo switcher */
+    background-color: rgba(189, 183, 107, 0.36);
     border-radius: 6px; }
   .workspace-thumbnails .placeholder {
     background-image: url("resource:///org/gnome/shell/theme/workspace-placeholder.svg");
-    background-size: contain;
+    background-size:cover;
     width: 18px; }
 
 .workspace-thumbnail-indicator {
@@ -2218,7 +2244,7 @@ StScrollBar {
   .user-icon StIcon {
     background-color: rgba(33, 37, 43, 0.18);
     border-radius: 6px;
-    padding: 12px;
+    padding: 18px;
     width: 2.725em;
     height: 2.725em; }
   .user-icon.user-avatar {
@@ -2227,7 +2253,7 @@ StScrollBar {
 .user-widget.vertical .user-icon {
   icon-size: 8em; }
   .user-widget.vertical .user-icon StIcon {
-    padding: 12px;
+    padding: 18px;
     padding-top: 18px;
     padding-bottom: 18px;
     width: 8em;
@@ -2386,7 +2412,7 @@ StScrollBar {
   font-size: 14pt;
   spacing: 12px;
   min-height: 20pt;
-  padding: 12px;
+  padding: 18px;
   color: darkkhaki; }
   .word-suggestions StButton {
     margin: 0 3px;
@@ -2417,7 +2443,7 @@ StScrollBar {
 
 /* Looking Glass */
 #LookingGlassDialog {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   margin-top: 36px;
   color: darkkhaki;
   font-size: 11pt;
@@ -2427,10 +2453,10 @@ StScrollBar {
   border: solid 18px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
-  padding: 12px;
+  padding: 18px;
   spacing: 6px; }
   #LookingGlassDialog > #Toolbar {
-    font-family: "Righteous" !important;
+    font-family: "Raleway" !important;
     box-shadow: 0 0 18px black;
     border: none;
     padding: 6px;
@@ -2446,8 +2472,8 @@ StScrollBar {
   #LookingGlassDialog .labels {
     spacing: 6px; }
   #LookingGlassDialog .notebook-tab {
-    -natural-hpadding: 12px;
-    -minimum-hpadding: 12px;
+    -natural-hpadding: 18px;
+    -minimum-hpadding: 18px;
     font-weight: bold;
     padding: 6px 12px;
     color: #d9d9d9;
@@ -2471,7 +2497,7 @@ StScrollBar {
     padding: 6px; }
 
 .lg-dialog StEntry {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki;
   font-size: 11pt;
   background-color: rgba(33, 37, 43, 0.88) /* #21252b */ ;
@@ -2479,7 +2505,7 @@ StScrollBar {
   border: solid 6px rgba(139, 0, 0, 0.88); /* border de color primario darkred */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
                     0 0 18 black;
-  padding: 12px;
+  padding: 18px;
   spacing: 6px; }
 
 .lg-dialog .shell-link {
@@ -2497,11 +2523,11 @@ StScrollBar {
     color: rgba(97, 96, 95, 0.9); }
 
 .lg-completions-text {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-style: italic; }
 
 .lg-obj-inspector-title {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   spacing: 6px; }
 
 .lg-obj-inspector-button {
@@ -2512,7 +2538,7 @@ StScrollBar {
     border: 1px solid #21252bff; }
 
 #lookingGlassExtensions {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   padding: 6px; }
 
 .lg-extensions-list {
@@ -2520,7 +2546,7 @@ StScrollBar {
   spacing: 6px; }
 
 .lg-extension {
-  padding: 12px;
+  padding: 18px;
   border-radius: 6px;
   margin: 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
@@ -2547,7 +2573,7 @@ StScrollBar {
   spacing: 6px; }
 
 #LookingGlassPropertyInspector {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   background: rgba(33, 37, 43, 1);
   border: 1px solid rgba(0, 0, 0, 0.7);
   border-radius: 6px;
@@ -2785,7 +2811,7 @@ StScrollBar {
 
 /* Screen Shield */
 .unlock-dialog-clock {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   color: darkkhaki;
   font-weight: 300;
   text-align: center;
@@ -2838,7 +2864,7 @@ StScrollBar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); }
 
 #lockDialogGroup {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   background-color: #21252b; }
 
 #unlockDialogNotifications StButton#vhandle, #unlockDialogNotifications StButton#hhandle {
@@ -2850,7 +2876,7 @@ StScrollBar {
 
 /* Overrides */
 #panel, #panel.solid {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   font-weight: normal;
   /* background-color: transparent; */
   background-color: rgba(33, 37, 43, 0.88);
@@ -2864,14 +2890,17 @@ StScrollBar {
     #panel:overview .panel-button, #panel.solid:overview .panel-button {
       min-width: 3em !important;
       color: darkkhaki;
+      font-family: "Orbitron" !important; /* _FONT_BUTTONS_ */
+      font-weight: 700;
       background-color: darkred; /* color buttons */
     }
   #panel .panel-button, #panel.solid .panel-button {
     min-width: 3em !important;
-    -natural-hpadding: 12px;
+    -natural-hpadding: 18px;
     -minimum-hpadding: 6px;
     margin: 1px;
-    font-weight: normal;
+    font-family: "Orbitron" !important; /* _FONT_BUTTONS_ */
+    font-weight: 700;
     color: darkkhaki;
     background-color: darkred; /* color buttons */
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.18);
@@ -2911,16 +2940,18 @@ StScrollBar {
     -panel-corner-radius: 0; }
   #panel.lock-screen, #panel.unlock-screen, #panel.login-screen, #panel.solid.lock-screen, #panel.solid.unlock-screen, #panel.solid.login-screen {
     background-color: rgba(246, 245, 244, 0.5);
-    /* background-gradient-start: rgba(246, 245, 244, 0.5);
-    background-gradient-end: rgba(246, 245, 244, 0.5); */
+    background-gradient-start: rgba(246, 245, 244, 0.5);
+    background-gradient-end: rgba(246, 245, 244, 0.5);
     border-bottom: none; }
     #panel.lock-screen .panel-button, #panel.unlock-screen .panel-button, #panel.login-screen .panel-button, #panel.solid.lock-screen .panel-button, #panel.solid.unlock-screen .panel-button, #panel.solid.login-screen .panel-button {
       color: darkkhaki; }
 
 #appMenu {
-  spinner-image: url("classic-process-working.svg"); 
+  spinner-image: url("classic-process-working.svg");
 }
   #appMenu .panel-status-menu-box { /* boton aplicacion seleccionada en el panel */
+    font-family: "Orbitron" !important; /* _FONT_BUTTONS_ */
+    font-weight: 700;
     margin: 6px;
     padding: 6px;
     border-radius: 6px;
@@ -2930,7 +2961,7 @@ StScrollBar {
 .tile-preview-left.on-primary,
 .tile-preview-right.on-primary,
 .tile-preview-left.tile-preview-right.on-primary {
-  font-family: "Righteous" !important;
+  font-family: "Raleway" !important;
   /* keep in sync with -panel-corner-radius */
   border-radius: 6px; }
 
