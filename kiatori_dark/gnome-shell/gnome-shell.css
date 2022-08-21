@@ -1534,7 +1534,7 @@ StScrollBar {
   padding: 6px; }
   .screenshot-ui-capture-button .screenshot-ui-capture-button-circle {
     background-color: rgba(189, 183, 107, 1);
-    transition-duration: 200ms;
+    transition-duration: 100ms;
     border-radius: 6px; }
     .screenshot-ui-capture-button .screenshot-ui-capture-button-circle:hover, .screenshot-ui-capture-button .screenshot-ui-capture-button-circle:focus {
       background-color: rgba(87, 88, 89, 1); }
@@ -1606,12 +1606,12 @@ StScrollBar {
     margin-bottom: 200px; }
 
 .screenshot-ui-window-selector-window-border {
-  transition-duration: 200ms;
+  transition-duration: 100ms;
   border-radius: 6px;
   border: 6px rgba(33, 37, 43, 1); /* #21252b panelcolor */ }
 
 .screenshot-ui-window-selector-check {
-  transition-duration: 200ms;
+  transition-duration: 100ms;
   color: rgba(33, 37, 43, 1); /* #21252b panelcolor */
   border-radius: 6px;
   border-width: 12px;
@@ -1629,7 +1629,7 @@ StScrollBar {
   background-color: rgba(139, 0, 0, 1); }
 
 .screenshot-ui-screen-selector {
-  transition-duration: 200ms;
+  transition-duration: 100ms;
   background-color: rgba(0, 0, 0, 0.5); }
   .screenshot-ui-screen-selector:hover {
     background-color: rgba(0, 0, 0, 0.3); }
@@ -1656,7 +1656,7 @@ StScrollBar {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.72);
   font-weight: bold;
   height: 3em;
-  transition-duration: 250ms; }
+  transition-duration: 100ms; }
   #panel.unlock-screen, #panel.login-screen, #panel:overview {
     font-family: "Raleway" !important;
     /* background-color: transparent; */
@@ -1671,11 +1671,11 @@ StScrollBar {
     color: rgba(189, 183, 107, 1);
     -natural-hpadding: 18px;
     -minimum-hpadding: 6px;
-    transition-duration: 150ms;
+    transition-duration: 100ms;
     border: 3px solid rgba(33, 37, 43, 1); /* #21252b panelcolor */
     border-radius: 6px;}
     #panel .panel-button.clock-display .clock {
-      transition-duration: 150ms;
+      transition-duration: 100ms;
       border: 3px solid rgba(33, 37, 43, 1); /* #21252b panelcolor */
       border-radius: 6px; }
     #panel .panel-button.screen-recording-indicator {
@@ -1843,7 +1843,7 @@ StScrollBar {
   padding: 3px;
   height: 30px;
   width: 30px;
-  transition-duration: 300ms; }
+  transition-duration: 100ms; }
   .window-close StIcon, .screenshot-ui-close-button StIcon {
     icon-size: 24px; }
   .window-close:hover, .screenshot-ui-close-button:hover {
@@ -1854,7 +1854,7 @@ StScrollBar {
     background-color: rgba(87, 88, 89, 1); }
 
 .workspace-background { /* areas de trabajo */
-  padding: 3px;
+  padding: 0px;
   border-radius: 36px;
   background-color: rgba(0, 0, 0, 0.72);
   border: 18px rgba(139, 0, 0, 0.72); /* border de color primario rgba(139, 0, 0, 1) */
@@ -1971,6 +1971,7 @@ StScrollBar {
 
 /* Dash */
 #dash {
+  transition-duration: 100ms;
   font-family: "Raleway" !important;
   margin-bottom: 3em; }
   #dash .placeholder {
@@ -1984,6 +1985,7 @@ StScrollBar {
     margin-bottom: 18px; }
 
 .dash-background {
+  transition-duration: 100ms;
   background-color: rgba(33, 37, 43, 0.81);
   border-radius: 72px;
   border: solid 6px rgba(139, 0, 0, 0.72); /* darkred */
@@ -2322,6 +2324,7 @@ StScrollBar {
 
 /* Workspace animation */
 .workspace-animation {
+  transition-duration: 100ms;
   background-color: rgba(33, 37, 43, 1); /* #21252b panelcolor */ }
 
 /* Tiled window previews */
@@ -2952,11 +2955,11 @@ StScrollBar {
     background-color: rgba(139, 0, 0, 1); /* color buttons */
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.18);
     text-shadow: none;
-    transition-duration: 0ms;
+    transition-duration: 100ms;
     border: 0;
     border-radius: 6px; }
     #panel .panel-button.clock-display .clock, #panel.solid .panel-button.clock-display .clock {
-      transition-duration: 0ms;
+      transition-duration: 100ms;
       border: 0;
       border-radius: 0px; }
     #panel .panel-button:hover, #panel.solid .panel-button:hover {
