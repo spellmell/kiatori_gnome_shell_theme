@@ -2999,9 +2999,9 @@ StScrollBar {
   #appMenu .panel-status-menu-box { /* boton aplicacion seleccionada en el panel */
     font-family: "Orbitron" !important; /* _FONT_BUTTONS_ */
     font-weight: 700;
-    margin: 6px;
-    padding: 6px;
-    border-radius: 6px;
+    /* margin: 6px; */
+    /* padding: 6px; */
+    /* border-radius: 6px; */
     /* background-color: rgba(33, 37, 43, 0.36);  */
     /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.81); */
   }
