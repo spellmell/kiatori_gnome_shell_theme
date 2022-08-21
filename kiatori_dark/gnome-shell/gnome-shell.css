@@ -480,7 +480,6 @@ StScrollBar {
     background-color: darkred !important; }
   .popup-menu-item:checked {
     margin-bottom: 0;
-    /* box-shadow: inset 0 -1px 0 0 #dad6d2; */
     border-radius: 6px; }
     .popup-menu-item:checked:focus, .popup-menu-item:checked:hover {
       background-color: darkred !important; }
@@ -591,7 +590,7 @@ StScrollBar {
   .aggregate-menu .popup-menu-ornament {
     width: 0 !important; }
   .aggregate-menu .popup-menu-icon {
-    -st-icon-style: symbolic; }
+    -st-icon-style: symbolic !important; }
     .aggregate-menu .popup-menu-icon:ltr {
       margin-right: 8px; }
     .aggregate-menu .popup-menu-icon:rtl {
@@ -939,7 +938,7 @@ StScrollBar {
     .message-list .message-list-placeholder > StIcon {
       icon-size: 3.27em;
       margin-bottom: 12px;
-      -st-icon-style: symbolic; }
+      -st-icon-style: symbolic !important; }
 
 .message-list-sections {
   spacing: 6px;
@@ -960,7 +959,7 @@ StScrollBar {
   .message-list-controls .dnd-button {
     border-width: 2px;
     border-color: #21252b;
-    border-radius: 32px;
+    border-radius: 36px;
     border-style: solid; }
     .message-list-controls .dnd-button:focus {
       border-color: rgba(139, 0, 0, 0.6); }
@@ -1000,7 +999,7 @@ StScrollBar {
       padding-left: 6px; }
     .message .message-icon-bin > StIcon {
       icon-size: 2.18em;
-      -st-icon-style: symbolic; }
+      -st-icon-style: symbolic !important; }
     .message .message-icon-bin > .fallback-app-icon {
       width: 1.09em;
       height: 1.09em; }
@@ -1408,6 +1407,7 @@ StScrollBar {
 
 /* Pad OSD */
 .pad-osd-window {
+  
   font-family: "Raleway" !important;
   padding: 32px;
   background-color: darkkhaki; }
@@ -1519,7 +1519,7 @@ StScrollBar {
   padding: 12px 18px !important;
   border-radius: 6px; }
 
-.screenshot-ui-capture-button {
+.screenshot-ui-capture-button { /* grabadora video gnome */
   width: 36px;
   height: 36px;
   border-radius: 6px;
@@ -1536,14 +1536,17 @@ StScrollBar {
   .screenshot-ui-capture-button:active .screenshot-ui-capture-button-circle {
     background-color: gray; }
   .screenshot-ui-capture-button:cast .screenshot-ui-capture-button-circle {
-    background-color: tomato; }
+    color:darkkhaki;
+    background-color: darkred; }
   .screenshot-ui-capture-button:cast:hover .screenshot-ui-capture-button-circle, .screenshot-ui-capture-button:cast:focus .screenshot-ui-capture-button-circle {
-    background-color: tomato; }
+    color: #21252b;
+    background-color: darkkhaki; }
   .screenshot-ui-capture-button:cast:active .screenshot-ui-capture-button-circle {
-    background-color: tomato; }
+    color: darkkhaki;
+    background-color: #575859; }
 
 .screenshot-ui-shot-cast-container {
-  background-color: #575859;
+  background-color: darkred;
   border-radius: 6px;
   padding: 3px;
   spacing: 3px; }
@@ -1562,7 +1565,7 @@ StScrollBar {
     background-color: rgba(33, 37, 43, 1); }
   .screenshot-ui-shot-cast-button:checked {
     background-color: darkkhaki;
-    color: black; }
+    color: #21252b; }
   .screenshot-ui-shot-cast-button StIcon {
     icon-size: 24px; }
 
@@ -1608,7 +1611,7 @@ StScrollBar {
   icon-size: 24px; }
 
 .screenshot-ui-window-selector-window:hover .screenshot-ui-window-selector-window-border {
-  border-color: #185fb4; }
+  border-color: darkkhaki; }
 
 .screenshot-ui-window-selector-window:checked .screenshot-ui-window-selector-window-border {
   border-color: darkred;
@@ -1663,13 +1666,14 @@ StScrollBar {
     -minimum-hpadding: 6px;
     transition-duration: 150ms;
     border: 3px solid #21252b;
-    border-radius: 6px; }
+    border-radius: 6px;}
     #panel .panel-button.clock-display .clock {
       transition-duration: 150ms;
       border: 3px solid #21252b;
       border-radius: 6px; }
     #panel .panel-button.screen-recording-indicator {
-      box-shadow: inset 0 0 0 100px #e01b24; }
+      /* box-shadow: inset 0 0 0 100px #e01b24; */
+    }
       #panel .panel-button.screen-recording-indicator StBoxLayout {
         spacing: 6px; }
       #panel .panel-button.screen-recording-indicator StIcon {
@@ -1681,7 +1685,8 @@ StScrollBar {
         #panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
           box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.2); }
       #panel .panel-button.screen-recording-indicator:active, #panel .panel-button.screen-recording-indicator:overview, #panel .panel-button.screen-recording-indicator:focus, #panel .panel-button.screen-recording-indicator:checked {
-        box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.85); }
+        /* box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.85);  */
+      }
     #panel .panel-button:hover { /* boton hover */
       color: #21252b;
       border-radius: 6px;
@@ -1692,7 +1697,8 @@ StScrollBar {
         #panel .panel-button.clock-display:hover .clock {
           box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.15); }
       #panel .panel-button.screen-recording-indicator:hover {
-        box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.9); }
+        /* box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.9); */
+      }
     #panel .panel-button:active:hover, #panel .panel-button:overview:hover, #panel .panel-button:focus:hover, #panel .panel-button:checked:hover {
       box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.25); }
       #panel .panel-button.clock-display:active:hover, #panel .panel-button.clock-display:overview:hover, #panel .panel-button.clock-display:focus:hover, #panel .panel-button.clock-display:checked:hover {
@@ -1700,16 +1706,19 @@ StScrollBar {
         #panel .panel-button.clock-display:active:hover .clock, #panel .panel-button.clock-display:overview:hover .clock, #panel .panel-button.clock-display:focus:hover .clock, #panel .panel-button.clock-display:checked:hover .clock {
           box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.25); }
       #panel .panel-button.screen-recording-indicator:active:hover, #panel .panel-button.screen-recording-indicator:overview:hover, #panel .panel-button.screen-recording-indicator:focus:hover, #panel .panel-button.screen-recording-indicator:checked:hover {
-        box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.8); }
+        /* box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.8); */
+      }
     #panel .panel-button .system-status-icon {
       icon-size: 36px; /* iconos en barra tareas: shutdown red, volumen, bluetooth */
       padding: 6px;
-      margin: 0 6px; }
+      margin: 0 6px;
+      -st-icon-style: symbolic !important;}
     #panel .panel-button .panel-status-indicators-box .system-status-icon,
     #panel .panel-button .panel-status-menu-box .system-status-icon {
-      margin: 0; }
+      margin: 0; 
+      -st-icon-style: symbolic !important;}
     #panel .panel-button .app-menu-icon {
-      -st-icon-style: symbolic; }
+      -st-icon-style: symbolic !important; }
     #panel #panelActivities.panel-button { /* boton actividades */
       color: #21252b;
       margin: 3px;
@@ -1733,7 +1742,8 @@ StScrollBar {
       #panel.unlock-screen .panel-button.clock-display:active .clock, #panel.unlock-screen .panel-button.clock-display:overview .clock, #panel.unlock-screen .panel-button.clock-display:focus .clock, #panel.unlock-screen .panel-button.clock-display:checked .clock, #panel.login-screen .panel-button.clock-display:active .clock, #panel.login-screen .panel-button.clock-display:overview .clock, #panel.login-screen .panel-button.clock-display:focus .clock, #panel.login-screen .panel-button.clock-display:checked .clock, #panel:overview .panel-button.clock-display:active .clock, #panel:overview .panel-button.clock-display:overview .clock, #panel:overview .panel-button.clock-display:focus .clock, #panel:overview .panel-button.clock-display:checked .clock {
         box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.15); }
     #panel.unlock-screen .panel-button.screen-recording-indicator:active, #panel.unlock-screen .panel-button.screen-recording-indicator:overview, #panel.unlock-screen .panel-button.screen-recording-indicator:focus, #panel.unlock-screen .panel-button.screen-recording-indicator:checked, #panel.login-screen .panel-button.screen-recording-indicator:active, #panel.login-screen .panel-button.screen-recording-indicator:overview, #panel.login-screen .panel-button.screen-recording-indicator:focus, #panel.login-screen .panel-button.screen-recording-indicator:checked, #panel:overview .panel-button.screen-recording-indicator:active, #panel:overview .panel-button.screen-recording-indicator:overview, #panel:overview .panel-button.screen-recording-indicator:focus, #panel:overview .panel-button.screen-recording-indicator:checked {
-      box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.85); }
+      /* box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.85); */
+    }
   #panel.unlock-screen .panel-button:hover, #panel.login-screen .panel-button:hover, #panel:overview .panel-button:hover {
     color: #21252b;
     background-color: darkkhaki;
@@ -1752,7 +1762,8 @@ StScrollBar {
       #panel.unlock-screen .panel-button.clock-display:active:hover .clock, #panel.unlock-screen .panel-button.clock-display:overview:hover .clock, #panel.unlock-screen .panel-button.clock-display:focus:hover .clock, #panel.unlock-screen .panel-button.clock-display:checked:hover .clock, #panel.login-screen .panel-button.clock-display:active:hover .clock, #panel.login-screen .panel-button.clock-display:overview:hover .clock, #panel.login-screen .panel-button.clock-display:focus:hover .clock, #panel.login-screen .panel-button.clock-display:checked:hover .clock, #panel:overview .panel-button.clock-display:active:hover .clock, #panel:overview .panel-button.clock-display:overview:hover .clock, #panel:overview .panel-button.clock-display:focus:hover .clock, #panel:overview .panel-button.clock-display:checked:hover .clock {
         box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.2); }
     #panel.unlock-screen .panel-button.screen-recording-indicator:active:hover, #panel.unlock-screen .panel-button.screen-recording-indicator:overview:hover, #panel.unlock-screen .panel-button.screen-recording-indicator:focus:hover, #panel.unlock-screen .panel-button.screen-recording-indicator:checked:hover, #panel.login-screen .panel-button.screen-recording-indicator:active:hover, #panel.login-screen .panel-button.screen-recording-indicator:overview:hover, #panel.login-screen .panel-button.screen-recording-indicator:focus:hover, #panel.login-screen .panel-button.screen-recording-indicator:checked:hover, #panel:overview .panel-button.screen-recording-indicator:active:hover, #panel:overview .panel-button.screen-recording-indicator:overview:hover, #panel:overview .panel-button.screen-recording-indicator:focus:hover, #panel:overview .panel-button.screen-recording-indicator:checked:hover {
-      box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.8); }
+      /* box-shadow: inset 0 0 0 100px rgba(224, 27, 36, 0.8); */
+    }
   #panel .panel-status-indicators-box,
   #panel .panel-status-menu-box {
     spacing: 2px; }
@@ -1800,7 +1811,7 @@ StScrollBar {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* backdrop-filter: url('assets/grad_bg.svg'#filter) blur(40px) saturate(150%);  :( */
+  /* backdrop-filter: url('assets/grad_bg.svg'#filter) blur(40px) saturate(150%);  no implementado :( */
 }
 
 .overview-controls {
@@ -1836,10 +1847,11 @@ StScrollBar {
     background-color: #575859; }
 
 .workspace-background { /* areas de trabajo */
-  border-radius: 48px;
+  padding: 3px;
+  border-radius: 36px;
   background-color: rgba(0, 0, 0, 0.72);
-  border: solid 18px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
-  padding: 18px;}
+  border: 18px rgba(139, 0, 0, 0.72); /* border de color primario darkred */
+  }
 
 .search-entry { /* buscador */
   font-family: "Raleway" !important;
@@ -1878,10 +1890,10 @@ StScrollBar {
 
 /* Search */
 #searchResults {
-  margin: 0 4px; }
+  margin: 6px; }
 
 #searchResultsContent {
-  max-width: 1072px; }
+  max-width: 1024px; }
 
 .search-section {
   spacing: 18px; }
