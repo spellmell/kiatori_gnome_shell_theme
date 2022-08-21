@@ -285,7 +285,7 @@ StEntry {
   text-align: center;
   color: darkkhaki;
   font-size: 16pt;
-  font-weight: 200;
+  font-weight: 400;
   background-color: rgba(33, 37, 43, 0.81);
   border-radius: 72px 18px 72px 72px !important;
   border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
@@ -300,6 +300,7 @@ StEntry {
     /* input buscador hover */
     color: darkkhaki;
     font-size: 16pt;
+    font-weight: 400;
     background-color: rgba(33, 37, 43, 0.81);
     border-radius: 72px 18px 72px 72px;
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
@@ -312,7 +313,7 @@ StEntry {
     /* input en modal */
     color: darkkhaki;
     font-size: 16pt;
-    font-weight: 200;
+    font-weight: 400;
     background-color: rgba(33, 37, 43, 0.81);
     border-radius: 72px 18px 72px 72px;
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
@@ -324,7 +325,7 @@ StEntry {
   StEntry:insensitive {
     color: darkkhaki;
     font-size: 16pt;
-    font-weight: 200;
+    font-weight: 400;
     background-color: rgba(33, 37, 43, 0.81);
     border-radius: 72px 18px 72px 72px;
     border: solid 6px rgba(139, 0, 0, 0.72); /* darkred first color */
