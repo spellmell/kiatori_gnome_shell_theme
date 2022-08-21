@@ -529,13 +529,13 @@ StScrollBar {
       border-radius: 6px 6px 18px 18px; }
     .popup-sub-menu .popup-menu-item:focus, .popup-sub-menu .popup-menu-item:hover {
       color: rgba(33, 37, 43, 1); /* #21252b panelcolor */
-      background-color: rgba(189, 183, 107, 1) !important; }
+      background-color: rgba(189, 183, 107, 0.72) !important; }
     .popup-sub-menu .popup-menu-item:checked {
       background-color: rgba(139, 0, 0, 1) !important; }
       .popup-sub-menu .popup-menu-item:checked:focus, .popup-sub-menu .popup-menu-item:checked:hover {
         background-color: rgba(139, 0, 0, 1) !important; }
     .popup-sub-menu .popup-menu-item:active {
-      background-color: khaki !important; }
+      background-color: rgba(189, 183, 107, 0.72) !important; }
   .popup-sub-menu .popup-menu-section .popup-menu-item:last-child:hover, .popup-sub-menu .popup-menu-section .popup-menu-item:last-child:focus {
     border-radius: 6px; }
   .popup-sub-menu .popup-menu-section:last-child .popup-menu-item:last-child {
@@ -1727,7 +1727,7 @@ StScrollBar {
     #panel .panel-button .app-menu-icon {
       -st-icon-style: symbolic !important; }
     #panel #panelActivities.panel-button { /* boton actividades */
-      color: rgba(33, 37, 43, 1); /* #21252b panelcolor */
+      color: rgba(189, 183, 107, 1) !important; /* #21252b panelcolor */
       margin: 3px;
       padding: 3px;
       border-radius: 72px;
