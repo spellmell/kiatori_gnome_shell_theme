@@ -291,7 +291,7 @@ StEntry {
   font-weight: 600;
   background-color: rgba(7, 13, 19, 0.81);
   border-radius: 72px 18px 72px 72px !important;
-  border: solid 6px rgba(139, 0, 0, 0.72); /* darkred */
+  border: solid 6px rgba(139, 0, 0, 0.72); 
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
   padding: 18px;
@@ -306,7 +306,7 @@ StEntry {
     font-weight: 600;
     background-color: rgba(7, 13, 19, 0.81);
     border-radius: 72px 18px 72px 72px;
-    border: solid 6px rgba(139, 0, 0, 0.72); /* darkred */
+    border: solid 6px rgba(139, 0, 0, 0.72); 
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
     padding: 18px;
@@ -319,7 +319,7 @@ StEntry {
     font-weight: 600;
     background-color: rgba(7, 13, 19, 0.81);
     border-radius: 72px 18px 72px 72px;
-    border: solid 6px rgba(139, 0, 0, 0.72); /* darkred */
+    border: solid 6px rgba(139, 0, 0, 0.72); 
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
     padding: 18px;
@@ -331,7 +331,7 @@ StEntry {
     font-weight: 600;
     background-color: rgba(7, 13, 19, 0.81);
     border-radius: 72px 18px 72px 72px;
-    border: solid 6px rgba(139, 0, 0, 0.72); /* darkred */
+    border: solid 6px rgba(139, 0, 0, 0.72); 
     box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
     0 0 18 black;
     padding: 18px;
@@ -421,7 +421,7 @@ StScrollBar {
     min-height: 24px; 
     margin-bottom: 18px;
     border-radius: 72px 18px 72px 72px;
-    background-color: rgba(139, 0, 0, 1); /* rgba(139, 0, 0, 1) */ 
+    background-color: rgba(139, 0, 0, 1);  
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
   }
   StScrollBar StBin#trough {
@@ -513,7 +513,7 @@ StScrollBar {
 
 .popup-menu-arrow,
 .popup-menu-icon {
-  color: darkkhaki;
+  color: rgba(189, 183, 107, 1);
   border-radius: 72px;
   background-color: transparent !important;
   /* box-shadow: 0 0 12px rgba(0, 0, 0, 0.18); */
@@ -573,7 +573,7 @@ StScrollBar {
     height: 6px; /* separador menus */
     margin: 0 18px;
     border-radius: 72px;
-    background-color: rgba(189, 183, 107, 0.36); /* rgba(189, 183, 107, 1) */ }
+    background-color: rgba(189, 183, 107, 0.36); }
   .popup-separator-menu-item .popup-menu-ornament {
     width: 0 !important; }
   .popup-sub-menu .popup-separator-menu-item {
@@ -587,7 +587,7 @@ StScrollBar {
       /* separador sub menu apagar */
       margin: 0px !important;
       padding: 0px !important;
-      background-color: rgba(189, 183, 107, 0.36); /* rgba(189, 183, 107, 1) */ }
+      background-color: rgba(189, 183, 107, 0.36); }
 
 .background-menu {
   -boxpointer-gap: 0px;
@@ -752,7 +752,7 @@ StScrollBar {
       height: 16px !important;
       font-weight: 700; }
   .calendar .calendar-nonwork-day {
-    color: darkred; }
+    color: rgba(139, 0, 0, 1); }
   .calendar .calendar-other-month-day {
     color: rgba(189, 183, 107, 0.36); }
     .calendar .calendar-other-month-day.calendar-nonwork-day {
@@ -989,22 +989,22 @@ StScrollBar {
   background-color: rgba(139, 0, 0, 0.72); }
   .message:focus {
     color: rgba(189, 183, 107, 1);
-    background-color: rgba(7, 13, 19, 0.81);
+    background-color: rgba(32, 48, 38, 0.81);
   }
     .message:focus:hover {
       color: rgba(189, 183, 107, 1) !important;
-      background-color: rgba(7, 13, 19, 0.81);
+      background-color: rgba(32, 48, 38, 0.81);
     }
     .message:focus:active {
       color: rgba(189, 183, 107, 1);
-      background-color: rgba(32, 48, 38, 1);
+      background-color: rgba(32, 48, 38, 0.81);
     }
   .message:hover {
     color: rgba(189, 183, 107, 1) !important;
-    background-color: rgba(7, 13, 19, 0.81); }
+    background-color: rgba(32, 48, 38, 0.81); }
   .message:active {
     color: rgba(189, 183, 107, 1);
-    background-color: rgba(7, 13, 19, 0.81); }
+    background-color: rgba(32, 48, 38, 0.81); }
   .message .message-icon-bin {
     padding: 18px; }
     .message .message-icon-bin:ltr {
@@ -1024,17 +1024,17 @@ StScrollBar {
   }
   .message .message-title { /* en alertas del reloj*/
     color: rgba(189, 183, 107, 1);
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: 700;
     /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
     padding-top: 0.56em; }
   .message .message-secondary-bin {
-    font-size: 12pt;
+    font-size: 10pt;
     font-weight: 600;
     padding: 0 8px; }
     .message .message-secondary-bin > .event-time {
       color: rgba(189, 183, 107, 1) !important;
-      font-size: 10pt;
+      font-size: 8pt;
       font-weight: 600;
       /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
       padding-bottom: 0.12em; }
@@ -1056,7 +1056,7 @@ StScrollBar {
     color: rgba(189, 183, 107, 1); }
 
 .url-highlighter {
-  link-color: darkkhaki; }
+  link-color: rgba(189, 183, 107, 1); }
 
 /* Media Controls */
 .message-media-control {
@@ -1888,7 +1888,7 @@ StScrollBar {
   font-size: 16pt;
   background-color: rgba(7, 13, 19, 0.81);
   border-radius: 72px;
-  border: solid 6px rgba(139, 0, 0, 0.72); /* darkred */
+  border: solid 6px rgba(139, 0, 0, 0.72); 
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
   padding: 18px;
@@ -2012,7 +2012,7 @@ StScrollBar {
   transition-duration: 100ms;
   background-color: rgba(7, 13, 19, 0.81);
   border-radius: 72px;
-  border: solid 6px rgba(139, 0, 0, 0.72); /* darkred */
+  border: solid 6px rgba(139, 0, 0, 0.72); 
   box-shadow: 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
   padding: 18px;
@@ -2182,7 +2182,7 @@ StScrollBar {
   font-size: 9pt;
   background-color: rgba(7, 13, 19, 0.81) !important;
   border-radius: 72px;
-  border: solid 18px rgba(139, 0, 0, 0.72); /* darkred */
+  border: solid 18px rgba(139, 0, 0, 0.72); 
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
   0 0 18 black;
   padding: 18px;
@@ -2557,7 +2557,7 @@ StScrollBar {
     -minimum-hpadding: 18px;
     font-weight: bold;
     padding: 6px 12px;
-    color: darkkhaki;
+    color: rgba(189, 183, 107, 1);
     transition-duration: 100ms;
     box-shadow: none;
     border: none;
@@ -2723,8 +2723,8 @@ StScrollBar {
         color: rgba(189, 183, 107, 1); }
       .login-dialog .modal-dialog-button:default:active,
       .unlock-dialog .modal-dialog-button:default:active {
-        color: darkkhaki;
-        background-color: darkred; /* revisar */ }
+        color: rgba(189, 183, 107, 1);
+        background-color: rgba(139, 0, 0, 1); /* revisar */ }
       .login-dialog .modal-dialog-button:default:insensitive,
       .unlock-dialog .modal-dialog-button:default:insensitive {
         color: rgba(0, 0, 0, 0.3);
@@ -2760,7 +2760,7 @@ StScrollBar {
   padding: 24px 0px; }
 
 .login-dialog-banner {
-  color: darkkhaki; }
+  color: rgba(189, 183, 107, 1); }
 
 .login-dialog-button-box {
   width: 23em;
@@ -2779,7 +2779,7 @@ StScrollBar {
 
 .login-dialog-not-listed-label {
   font-weight: bold;
-  color: darkkhaki;
+  color: rgba(189, 183, 107, 1);
   padding-top: 1em; }
 
 .login-dialog-auth-list-view {
@@ -2795,7 +2795,7 @@ StScrollBar {
 .login-dialog-auth-list-item {
   border-radius: 6px;
   padding: 6px;
-  color: darkkhaki; }
+  color: rgba(189, 183, 107, 1); }
   .login-dialog-auth-list-item:focus, .login-dialog-auth-list-item:selected {
     background-color: rgba(139, 0, 0, 1);
     color: rgba(33, 37, 43, 1);  }
@@ -2826,7 +2826,7 @@ StScrollBar {
 .login-dialog-user-list-item {
   border-radius: 6px;
   padding: 6px;
-  color: darkkhaki; }
+  color: rgba(189, 183, 107, 1); }
   .login-dialog-user-list-item:ltr .user-widget {
     padding-right: 1em; }
   .login-dialog-user-list-item:rtl .user-widget {
@@ -2872,7 +2872,7 @@ StScrollBar {
   height: 1.5em; }
 
 .login-dialog-prompt-label {
-  color: darkkhaki;
+  color: rgba(189, 183, 107, 1);
   font-size: 12pt;
   padding-top: 1em; }
 
@@ -3052,12 +3052,12 @@ StScrollBar {
 
   /* fix button limpiar en notificaciones */
 .popup-menu .button {
-  color: darkkhaki;
+  color: rgba(189, 183, 107, 1);
   background-color: #21252b;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
 }
 .popup-menu .button:hover {
-  color: darkkhaki;
+  color: rgba(189, 183, 107, 1);
   background-color: #575859;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
 }
