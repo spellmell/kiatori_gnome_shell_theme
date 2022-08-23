@@ -4,10 +4,10 @@ hide-disabled=false
 unpin-button=false
 
 [org/gnome/shell/extensions/user-theme]
-name='kiatori_darkred'
+name='_KIATORITHEME_'
 
 [org/gnome/shell/extensions/just-perfection]
-activities-button-icon-path='file:///home/spellmell/.themes/kiatori_darkred/gnome-shell/assets/applogo.svg'
+activities-button-icon-path='file:///home/_USERNAME_/.themes/_KIATORITHEME_/gnome-shell/assets/applogo.svg'
 activities-button-label=false
 clock-menu-position=0
 notification-banner-position=5
