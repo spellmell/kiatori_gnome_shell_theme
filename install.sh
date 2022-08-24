@@ -63,19 +63,14 @@ then
   sleep 1
   sed -i "s/_PRIMARY_COLOR_/${COLORS[$1]}/g" ./temp/gnome-shell/gnome-shell.css
   mv ./temp $ROUTE/kiatori_$1
+  notify-send "kiatori_$1 theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
 else
   sed -i "s/_KIATORITHEME_/$THEME/g" ./kiatori.dconf
   cp -r ./kiatori_* $ROUTE
+  notify-send "$THEME theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
 fi
 
 dconf load / < ./kiatori.dconf
 rm ./kiatori.dconf
-
-if [ $1 ];
-then
-  notify-send "kiatori_$1 theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
-else
-  notify-send "$THEME theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
-fi
 
 exit 0
