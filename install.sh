@@ -15,8 +15,8 @@ FONTSNAMES=("Raleway" "Orbitron")
 EXTWL="https://extensions.gnome.org/extension-data"
 EXTUL=("extension-listtu.berry.v30" "user-themegnome-shell-extensions.gcampax.github.com.v49" "just-perfection-desktopjust-perfection.v21")
 # colors
-declare -A colors
-COLORS=([darkred]='rgba(139, 0, 0,' [crimson]='rgba(220, 20, 60,' [darkolivegreen]='rgba(85, 107, 47,')
+declare -A COLORS
+COLORS=([darkred]="rgba(139, 0, 0," [crimson]="rgba(220, 20, 60," [darkolivegreen]="rgba(85, 107, 47,")
 
 # fonts instalation
 for FONTNAME in ${FONTSNAMES[@]};
@@ -54,12 +54,14 @@ fi
 cp ./setup/kiatori.dconf_setup ./kiatori.dconf
 sed -i "s/_USERNAME_/$USER/" ./kiatori.dconf
 
-if [ $1 && -d ./kiatori_$1 ];
+if [ $1 ];
 then
   sed -i "s/_KIATORITHEME_/kiatori_$1/g" ./kiatori.dconf
   cp -r ./kiatori_darkred ./temp
-  cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell.css
-  sed -e "s/_PRIMARY_COLOR_/$COLORS[$1]/g" ./temp/gnome-shell.css
+  cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
+  sed -i "s/(_PRIMARY_COLOR_)/($1)/g" ./temp/gnome-shell/gnome-shell.css
+  sleep 1
+  sed -i "s/_PRIMARY_COLOR_/${COLORS[$1]}/g" ./temp/gnome-shell/gnome-shell.css
   mv ./temp $ROUTE/kiatori_$1
 else
   sed -i "s/_KIATORITHEME_/$THEME/g" ./kiatori.dconf
