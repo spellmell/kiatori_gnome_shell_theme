@@ -38,6 +38,7 @@ c/* Kiatori (darkred) theme for Gnome 42.*^
 
 /* Global Values */
 stage {
+  color: rgba(128, 0, 128, 1);
   margin: 0px 36px;
   padding: 36px;
   color: rgba(189, 183, 107, 1);
