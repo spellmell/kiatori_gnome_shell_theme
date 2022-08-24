@@ -51,7 +51,7 @@ stage {
   font-family: "Raleway" !important;
   color: rgba(189, 183, 107, 1);
   background-color: rgba(7, 13, 19, 0.81); 
-  background-image: url('assets/grad_bg_03.svg') !important;
+  background-image: url('assets/grad_bg_popups.svg') !important;
   border-radius: 72px 18px 72px 72px !important;
   border: solid 18px _PRIMARY_COLOR_ 0.81); /* border de color primario _PRIMARY_COLOR_ 1) */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
@@ -81,7 +81,7 @@ stage {
   font-weight: 600;
   font-size: 10pt;
   background-color: rgba(7, 13, 19, 0.81)  ;
-  background-image: url('assets/grad_bg_03.svg');
+  background-image: url('assets/grad_bg_popups.svg');
   border-radius: 72px 18px 72px 72px;
   border: solid 18px _PRIMARY_COLOR_ 0.72); /* border de color primario _PRIMARY_COLOR_ 1) */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
@@ -455,7 +455,7 @@ StScrollBar {
   font-size: 10pt;
   font-weight: 600;
   background-color: rgba(7, 13, 19, 0.88)  ;
-  background-image: url('assets/grad_bg_03.svg');
+  background-image: url('assets/grad_bg_popups.svg');
   border-radius: 72px 18px 72px 72px;
   border: solid 18px _PRIMARY_COLOR_ 0.88); /* border de color primario _PRIMARY_COLOR_ 1) */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
@@ -1145,7 +1145,7 @@ StScrollBar {
   font-weight: 600;
   font-size: 10pt;
   background-color: rgba(7, 13, 19, 0.81)  ;
-  background-image: url('assets/grad_bg_03.svg');
+  background-image: url('assets/grad_bg_popups.svg');
   border-radius: 72px 18px 72px 72px;
   border: solid 18px _PRIMARY_COLOR_ 0.72); /* border de color primario _PRIMARY_COLOR_ 1) */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
@@ -1835,7 +1835,7 @@ StScrollBar {
 #overviewGroup {
   font-family: "Raleway" !important;
   background-color: rgba(7, 13, 19, 1); 
-  background-image: url('assets/grad_bg_02.svg');
+  background-image: url('assets/grad_bg_overview.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2528,7 +2528,7 @@ StScrollBar {
   color: rgba(189, 183, 107, 1);
   font-size: 11pt;
   background-color: rgba(7, 13, 19, 0.88)  ;
-  background-image: url('assets/grad_bg_03.svg');
+  background-image: url('assets/grad_bg_popups.svg');
   border-radius: 72px 18px 72px 72px;
   border: solid 18px _PRIMARY_COLOR_ 0.88); /* border de color primario _PRIMARY_COLOR_ 1) */
   box-shadow: inset 0 0 36px rgba(87, 88, 89, 0.36),
@@ -3039,7 +3039,7 @@ StScrollBar {
     /* border-radius: 6px; */
     /* background-color: rgba(7, 13, 19, 0.36);  */
     /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.81); */
-    /* background-image: url('assets/grad_bg_03.svg'); */
+    /* background-image: url('assets/grad_bg_popups.svg'); */
   }
 
 .tile-preview-left.on-primary,

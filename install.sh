@@ -16,7 +16,9 @@ EXTWL="https://extensions.gnome.org/extension-data"
 EXTUL=("extension-listtu.berry.v30" "user-themegnome-shell-extensions.gcampax.github.com.v49" "just-perfection-desktopjust-perfection.v21")
 # colors
 declare -A COLORS
-COLORS=([darkred]="rgba(139, 0, 0," [crimson]="rgba(220, 20, 60," [darkolivegreen]="rgba(85, 107, 47,")
+COLORS=([darkred]="rgba(139, 0, 0," [crimson]="rgba(220, 20, 60," [firebrick]="rgba(178, 34, 34," [orangered]="rgba(255, 69, 0," [darkolivegreen]="rgba(85, 107, 47," [forestgreen]="rgba(34, 139, 34,")
+declare -A COLORSHEX
+COLORSHEX=([darkred]="#8B0000" [crimson]="#DC143C" [firebrick]="#B22222" [orangered]="#FF4500" [darkolivegreen]="#556B2F" [forestgreen]="#228B22")
 
 # fonts instalation
 for FONTNAME in ${FONTSNAMES[@]};
@@ -60,8 +62,9 @@ then
   cp -r ./kiatori_darkred ./temp
   cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
   sed -i "s/(_PRIMARY_COLOR_)/($1)/g" ./temp/gnome-shell/gnome-shell.css
-  sleep 1
   sed -i "s/_PRIMARY_COLOR_/${COLORS[$1]}/g" ./temp/gnome-shell/gnome-shell.css
+  sed -i "s/#8a0000/${COLORSHEX[$1]}/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
+  sed -i "s/#8a0000/${COLORSHEX[$1]}/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
   mv ./temp $ROUTE/kiatori_$1
   notify-send "kiatori_$1 theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
 else
@@ -73,4 +76,5 @@ fi
 dconf load / < ./kiatori.dconf
 rm ./kiatori.dconf
 
+busctl --user call org.gnome.Shell
 exit 0
