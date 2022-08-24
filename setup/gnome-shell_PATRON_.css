@@ -419,7 +419,8 @@ StScrollBar {
   StScrollView StScrollBar {
     min-width: 24px;
     min-height: 24px;
-    margin-bottom: 18px;
+    margin-left: 18px !important;
+    margin-bottom: 18px !important;
     border-radius: 72px 18px 72px 72px;
     background-color: _PRIMARY_COLOR_ 1);  
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
@@ -984,7 +985,8 @@ StScrollBar {
   font-family: "Raleway" !important;
   border-radius: 36px 6px 6px 36px;
   margin: 3px;
-  margin-right: 48px; /* fix scroll in large list of alerts */
+  /* fix scroll in large list of alerts */
+  margin-right: 45px; 
   padding: 3px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
   color: rgba(189, 183, 107, 1);
