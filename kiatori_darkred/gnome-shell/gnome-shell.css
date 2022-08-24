@@ -38,7 +38,6 @@ c/* Kiatori (DarkRed) theme for Gnome 42.*^
 
 /* Global Values */
 stage {
-  color: rgba(255, 69, 0, 1);
   padding: 36px;
   color: rgba(189, 183, 107, 1);
   font-size: 12pt;
@@ -759,7 +758,7 @@ StScrollBar {
       color: rgba(139, 0, 0, 0.63); }
   .calendar .calendar-today {
     font-weight: 800;
-    color: rgba(33, 37, 43, 1) !important;
+    color: whitesmoke !important;
     border-radius: 72px;
     border: solid 6px rgba(189, 183, 107, 1);
     background-color: rgba(139, 0, 0, 1);

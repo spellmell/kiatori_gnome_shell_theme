@@ -16,9 +16,9 @@ EXTWL="https://extensions.gnome.org/extension-data"
 EXTUL=("extension-listtu.berry.v30" "user-themegnome-shell-extensions.gcampax.github.com.v49" "just-perfection-desktopjust-perfection.v21")
 # colors
 declare -A COLORS
-COLORS=([darkred]="rgba(139, 0, 0," [crimson]="rgba(220, 20, 60," [firebrick]="rgba(178, 34, 34," [orangered]="rgba(255, 69, 0," [darkolivegreen]="rgba(85, 107, 47," [forestgreen]="rgba(34, 139, 34,")
+COLORS=([darkred]="rgba(139, 0, 0," [tomato]="rgba(255, 99, 71," [crimson]="rgba(220, 20, 60," [firebrick]="rgba(178, 34, 34," [orangered]="rgba(255, 69, 0," [darkolivegreen]="rgba(85, 107, 47," [forestgreen]="rgba(34, 139, 34," [darkcyan]="rgba(0, 139, 139," [dimgrey]="rgba(105, 105, 105," [midnightblue]="rgba(25, 25, 112," [royalblue]="rgba(65, 105, 225," [seagreen]="rgba(46, 139, 87," [teal]="rgba(0, 128, 128,")
 declare -A COLORSHEX
-COLORSHEX=([darkred]="#8B0000" [crimson]="#DC143C" [firebrick]="#B22222" [orangered]="#FF4500" [darkolivegreen]="#556B2F" [forestgreen]="#228B22")
+COLORSHEX=([darkred]="#8B0000" [tomato]="#FF6347" [crimson]="#DC143C" [firebrick]="#B22222" [orangered]="#FF4500" [darkolivegreen]="#556B2F" [forestgreen]="#228B22" [darkcyan]="#008B8B" [dimgrey]="#696969" [midnightblue]="#191970" [royalblue]="#4169E1" [seagreen]="#2E8B57" [teal]="#008080")
 
 # fonts instalation
 for FONTNAME in ${FONTSNAMES[@]};
@@ -36,16 +36,16 @@ do
 done
 
 # extensions installation
-for EXTN in ${EXTUL[@]};
-do
-  wget "$EXTWL/$EXTN.shell-extension.zip"
-  ZIPNAME=./$EXTN.shell-extension
-  gnome-extensions install -f $ZIPNAME.zip
-  unzip -d $ZIPNAME $ZIPNAME.zip
-  NAME=$(jq '.uuid' ./$ZIPNAME/metadata.json | tr -d '"')
-  gnome-extensions enable $NAME
-  rm -Rf ./$ZIPNAME*
-done
+# for EXTN in ${EXTUL[@]};
+# do
+#   wget "$EXTWL/$EXTN.shell-extension.zip"
+#   ZIPNAME=./$EXTN.shell-extension
+#   gnome-extensions install -f $ZIPNAME.zip
+#   unzip -d $ZIPNAME $ZIPNAME.zip
+#   NAME=$(jq '.uuid' ./$ZIPNAME/metadata.json | tr -d '"')
+#   gnome-extensions enable $NAME
+#   rm -Rf ./$ZIPNAME*
+# done
 
 # theme instalation
 if [ ! -d $ROUTE ];
@@ -63,8 +63,8 @@ then
   cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
   sed -i "s/(_PRIMARY_COLOR_)/($1)/g" ./temp/gnome-shell/gnome-shell.css
   sed -i "s/_PRIMARY_COLOR_/${COLORS[$1]}/g" ./temp/gnome-shell/gnome-shell.css
-  sed -i "s/#8a0000/${COLORSHEX[$1]}/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
-  sed -i "s/#8a0000/${COLORSHEX[$1]}/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
+  sed -i "s/stop-color:#8a0000;stop-opacity:1;/stop-color:${COLORSHEX[$1]};stop-opacity:1;/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
+  sed -i "s/stop-color:#8a0000;stop-opacity:1;/stop-color:${COLORSHEX[$1]};stop-opacity:1;/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
   mv ./temp $ROUTE/kiatori_$1
   notify-send "kiatori_$1 theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
 else
