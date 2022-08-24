@@ -1,4 +1,4 @@
-c/* Kiatori (DarkRed) theme for Gnome 42.*^
+c/* Kiatori (darkred) theme for Gnome 42.*^
 # Version: 1.0.1
 # Customization by Spellmell
 # spellmell.github.io
@@ -38,6 +38,7 @@ c/* Kiatori (DarkRed) theme for Gnome 42.*^
 
 /* Global Values */
 stage {
+  margin: 0px 36px;
   padding: 36px;
   color: rgba(189, 183, 107, 1);
   font-size: 12pt;
@@ -417,7 +418,7 @@ StScrollBar {
   border-radius: 72px; }
   StScrollView StScrollBar {
     min-width: 24px;
-    min-height: 24px; 
+    min-height: 24px;
     margin-bottom: 18px;
     border-radius: 72px 18px 72px 72px;
     background-color: rgba(139, 0, 0, 1);  
@@ -932,7 +933,9 @@ StScrollBar {
 /* Message List */
 .message-list {
   font-family: "Raleway" !important;
-  width: 36em; /* ancho de las alertas, necesita mas espacio para titulos de reproductores */
+  min-width: 36em !important; /* ancho de las alertas, necesita mas espacio para titulos de reproductores */
+  max-width: 48em !important;
+  margin-right: 48px;
   border: solid rgba(139, 0, 0, 0.36); /* separador vertical */
   -st-icon-style: symbolic !important;
 }
@@ -981,6 +984,7 @@ StScrollBar {
   font-family: "Raleway" !important;
   border-radius: 36px 6px 6px 36px;
   margin: 3px;
+  margin-right: 48px; /* fix scroll in large list of alerts */
   padding: 3px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.18);
   color: rgba(189, 183, 107, 1);
@@ -1043,14 +1047,17 @@ StScrollBar {
         text-align: left; }
   .message .message-close-button {
     color: rgba(189, 183, 107, 1);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(32, 48, 38, 1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.81);
     border-radius: 72px;
     padding: 6px;
     margin: 1px; }
     .message .message-close-button:hover {
-      background-color: rgba(32, 48, 38, 1); }
+      background-color: rgba(32, 48, 38, 1);
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.81);}
     .message .message-close-button:active {
-      background-color: rgba(0, 0, 0, 0); }
+      background-color: rgba(32, 48, 38, 1); 
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.81);}
   .message .message-body {
     color: rgba(189, 183, 107, 1); }
 
