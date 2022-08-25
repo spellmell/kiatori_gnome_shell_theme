@@ -103,13 +103,8 @@ fi
 # busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart("Restarting…")'
 ;;
 -u)
-  if [ -d $ROUTE/kiatori_* ];
-  then
-    rm -Rf $ROUTE/kiatori_*
-    notify-send "All Kiotari themes have been uninstalled." -i "gnome-logo-text-dark"
-  else
-    notify-send "There is nothing to uninstall." -i "gnome-logo-text-dark"
-  fi
+  rm -Rf $ROUTE/kiatori_*
+  notify-send "All Kiotari themes have been uninstalled." -i "gnome-logo-text-dark"
 ;;
 *)
 echo -e "\n||| Kiatori Gnome Shell Theme |||\n\nRun: ./install.sh -i all, or one of these colors: darkred, tomato, crimson, firebrick, orangered, darkolivegreen, forestgreen, darkcyan, dimgrey, midnightblue, royalblue, slateblue, seagreen, teal, purple to install. Or use -u to uninstall all.\n"
