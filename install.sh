@@ -18,7 +18,8 @@ ROUTE=~/.themes
 FONTROUTE=~/.local/share/fonts
 FONTSNAMES=("Raleway" "Orbitron")
 EXTWL="https://extensions.gnome.org/extension-data"
-EXTUL=("extension-listtu.berry.v30" "user-themegnome-shell-extensions.gcampax.github.com.v49" "just-perfection-desktopjust-perfection.v21")
+declare -A EXTUL
+EXTUL=(["extension-list@tu.berry"]="extension-listtu.berry.v30" ["user-theme@gnome-shell-extensions.gcampax.github.com"]="user-themegnome-shell-extensions.gcampax.github.com.v49" ["just-perfection-desktop@just-perfection"]="just-perfection-desktopjust-perfection.v21")
 # colors
 declare -A COLORS
 COLORS=([darkred]="rgba(139, 0, 0," [tomato]="rgba(255, 99, 71," [crimson]="rgba(220, 20, 60," [firebrick]="rgba(178, 34, 34," [orangered]="rgba(255, 69, 0," [darkolivegreen]="rgba(85, 107, 47," [forestgreen]="rgba(34, 139, 34," [darkcyan]="rgba(0, 139, 139," [dimgrey]="rgba(105, 105, 105," [midnightblue]="rgba(25, 25, 112," [royalblue]="rgba(65, 105, 225," [slateblue]="rgba(106, 90, 205," [seagreen]="rgba(46, 139, 87," [teal]="rgba(0, 128, 128," [purple]="rgba(128, 0, 128,")
@@ -28,7 +29,7 @@ COLORSHEX=([darkred]="#8B0000" [tomato]="#FF6347" [crimson]="#DC143C" [firebrick
 case "$1" in
 -i)
   # fonts instalation
-installFonts=false
+installFonts=true
 if [ $installFonts == true ];
 then
   for FONTNAME in ${FONTSNAMES[@]};
@@ -47,18 +48,22 @@ then
 fi
 
 # extensions installation
-installExtensions=false
+installExtensions=true
+extensionsRoute=~/.local/share/gnome-shell/extensions
 if [ $installExtensions == true ];
 then
-  for EXTN in ${EXTUL[@]};
+  for EXTN in ${!EXTUL[@]};
   do
-    wget "$EXTWL/$EXTN.shell-extension.zip"
-    ZIPNAME=./$EXTN.shell-extension
-    gnome-extensions install -f $ZIPNAME.zip
-    unzip -d $ZIPNAME $ZIPNAME.zip
-    NAME=$(jq '.uuid' ./$ZIPNAME/metadata.json | tr -d '"')
-    gnome-extensions enable $NAME
-    rm -Rf ./$ZIPNAME*
+    if [ ! -d $extensionsRoute/$EXTN ];
+    then
+      wget "$EXTWL/${EXTUL[$EXTN]}.shell-extension.zip"
+      ZIPNAME=./${EXTUL[$EXTN]}.shell-extension
+      gnome-extensions install -f $ZIPNAME.zip
+      unzip -d $ZIPNAME $ZIPNAME.zip
+      NAME=$(jq '.uuid' ./$ZIPNAME/metadata.json | tr -d '"')
+      gnome-extensions enable $NAME
+      rm -Rf ./$ZIPNAME*
+    fi
   done
 fi
 
