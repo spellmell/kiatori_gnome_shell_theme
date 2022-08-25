@@ -5,8 +5,9 @@
 # Customization by Spellmell
 # spellmell.github.io
 # spellmell@protonmail.com
-# 7/25/2022
-# https://github.com/spellmell/kiatori_gnome_theme
+# 8/15/2022
+
+# https://github.com/spellmell/kiatori_gnome_shell_theme
 
  # This program is free software; you can redistribute it and/or modify it
  # under the terms and conditions of the GNU Lesser General Public License,
@@ -134,14 +135,13 @@ fi
     # echo "fail in the random color generation, trying again..."
     $0 -r
   fi
-;;  
-  
+;;
 -u)
   rm -Rf $ROUTE/kiatori_*
   notify-send "All Kiotari themes have been uninstalled." -i "gnome-logo-text-dark"
 ;;
 *)
-echo -e "\n||| Kiatori Gnome Shell Theme |||\n\nRun: ./install.sh -i all, random, or one of these colors: darkred, tomato, crimson, firebrick, orangered, darkolivegreen, forestgreen, darkcyan, dimgrey, midnightblue, royalblue, slateblue, seagreen, teal, purple to install. Or use -u to uninstall all.\n"
+echo -e "\n||| Kiatori Gnome Shell Theme |||\n\nRun: ./install.sh -i all, random, or one of these colors: darkred, tomato, crimson, firebrick, orangered, darkolivegreen, forestgreen, darkcyan, dimgrey, midnightblue, royalblue, slateblue, seagreen, teal, or purple to install. Also you can use -u to uninstall all installed themes.\n"
 exit 1
 ;;
 esac
