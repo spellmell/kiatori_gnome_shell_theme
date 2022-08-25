@@ -26,56 +26,79 @@ COLORS=([darkred]="rgba(139, 0, 0," [tomato]="rgba(255, 99, 71," [crimson]="rgba
 declare -A COLORSHEX
 COLORSHEX=([darkred]="#8B0000" [tomato]="#FF6347" [crimson]="#DC143C" [firebrick]="#B22222" [orangered]="#FF4500" [darkolivegreen]="#556B2F" [forestgreen]="#228B22" [darkcyan]="#008B8B" [dimgrey]="#696969" [midnightblue]="#191970" [royalblue]="#4169E1" [slateblue]="#6A5ACD" [seagreen]="#2E8B57" [teal]="#008080" [purple]="#800080")
 
+declare -F install_fonts
+install_fonts (){
+  # fonts instalation
+  installFonts=true
+  if [ $installFonts == true ];
+  then
+    for FONTNAME in ${FONTSNAMES[@]};
+    do
+      if [ ! -d /usr/share/fonts/$FONTNAME ];
+      then
+        if [ ! -d $FONTROUTE ];
+        then
+          mkdir -p $FONTROUTE
+          wget -O $FONTNAME.zip "https://fonts.google.com/download?family=$FONTNAME"
+          unzip -o -d $FONTROUTE/$FONTNAME $FONTNAME.zip
+          rm ./$FONTNAME.zip
+        fi
+      fi
+    done
+  fi
+}
+
+declare -F install_extensions
+install_extensions (){
+  # extensions installation
+  installExtensions=true
+  extensionsRoute=$HOME/.local/share/gnome-shell/extensions
+  if [ $installExtensions == true ];
+  then
+    for EXTN in ${!EXTUL[@]};
+    do
+      if [ ! -d $extensionsRoute/$EXTN ];
+      then
+        wget "$EXTWL/${EXTUL[$EXTN]}.shell-extension.zip"
+        ZIPNAME=./${EXTUL[$EXTN]}.shell-extension
+        gnome-extensions install -f $ZIPNAME.zip
+        unzip -d $ZIPNAME $ZIPNAME.zip
+        NAME=$(jq '.uuid' ./$ZIPNAME/metadata.json | tr -d '"')
+        gnome-extensions enable $NAME
+        rm -Rf ./$ZIPNAME*
+      fi
+    done
+  fi
+}
+
+declare -F setup
+setup (){
+  cp ./setup/kiatori.dconf_setup ./kiatori.dconf
+  sed -i "s/_USERNAME_/$USER/" ./kiatori.dconf
+}
+
+declare -F dconfig
+dconfig (){
+  dconf load / < ./kiatori.dconf
+  rm ./kiatori.dconf
+  notify-send "kiatori_$1 theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
+}
+
 case "$1" in
 -i)
-  # fonts instalation
-installFonts=true
-if [ $installFonts == true ];
-then
-  for FONTNAME in ${FONTSNAMES[@]};
-  do
-    if [ ! -d /usr/share/fonts/$FONTNAME ];
-    then
-      if [ ! -d $FONTROUTE ];
-      then
-        mkdir -p $FONTROUTE
-        wget -O $FONTNAME.zip "https://fonts.google.com/download?family=$FONTNAME"
-        unzip -o -d $FONTROUTE/$FONTNAME $FONTNAME.zip
-        rm ./$FONTNAME.zip
-      fi
-    fi
-  done
-fi
-
-# extensions installation
-installExtensions=true
-extensionsRoute=~/.local/share/gnome-shell/extensions
-if [ $installExtensions == true ];
-then
-  for EXTN in ${!EXTUL[@]};
-  do
-    if [ ! -d $extensionsRoute/$EXTN ];
-    then
-      wget "$EXTWL/${EXTUL[$EXTN]}.shell-extension.zip"
-      ZIPNAME=./${EXTUL[$EXTN]}.shell-extension
-      gnome-extensions install -f $ZIPNAME.zip
-      unzip -d $ZIPNAME $ZIPNAME.zip
-      NAME=$(jq '.uuid' ./$ZIPNAME/metadata.json | tr -d '"')
-      gnome-extensions enable $NAME
-      rm -Rf ./$ZIPNAME*
-    fi
-  done
-fi
+# call funcs
+install_fonts
+install_extensions
 
 # theme instalation
 if [ ! -d $ROUTE ];
 then
   mkdir -p $ROUTE
 fi
-cp ./setup/kiatori.dconf_setup ./kiatori.dconf
-sed -i "s/_USERNAME_/$USER/" ./kiatori.dconf
+
 if [[ $2 && $2 != "all" ]];
 then
+  setup
   sed -i "s/_KIATORITHEME_/kiatori_$2/g" ./kiatori.dconf
   cp -r ./kiatori_darkred ./temp
   cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
@@ -88,9 +111,7 @@ then
     rm -Rf $ROUTE/kiatori_$2
   fi 
   mv ./temp $ROUTE/kiatori_$2
-  dconf load / < ./kiatori.dconf
-  rm ./kiatori.dconf
-  notify-send "kiatori_$2 theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
+  dconfig $2
 elif [[ $2 && $2 == "all" ]];
 # install all themes colors
 then
@@ -109,8 +130,11 @@ fi
 # busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart("Restarting…")'
 ;;
 -r)
-  cp ./setup/kiatori.dconf_setup ./kiatori.dconf
-  sed -i "s/_USERNAME_/$USER/" ./kiatori.dconf
+  # call funcs
+  install_fonts
+  install_extensions
+  setup
+
   rndColor=$(echo $(od -txC -An -N3 /dev/random | tr \  -) | sed 's/-//g')
   a=$(echo $rndColor | cut -c 1-2 | tr '[:lower:]' '[:upper:]')
   b=$(echo $rndColor | cut -c 3-4 | tr '[:lower:]' '[:upper:]')
@@ -133,9 +157,7 @@ fi
       rm -Rf $ROUTE/kiatori_$rndColor
     fi 
     mv ./temp $ROUTE/kiatori_$rndColor
-    dconf load / < ./kiatori.dconf
-    rm ./kiatori.dconf
-    notify-send "kiatori_$rndColor theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
+    dconfig $rndColor
   else
     # echo "fail in the random color generation, trying again..."
     $0 -r
