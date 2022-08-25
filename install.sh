@@ -75,6 +75,21 @@ declare -F setup
 setup (){
   cp ./setup/kiatori.dconf_setup ./kiatori.dconf
   sed -i "s/_USERNAME_/$USER/" ./kiatori.dconf
+  cp -r ./kiatori_darkred ./temp
+  cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
+  sed -i "s/_KIATORITHEME_/kiatori_$1/g" ./kiatori.dconf
+  sed -i "s/(_PRIMARY_COLOR_)/($1)/g" ./temp/gnome-shell/gnome-shell.css
+  sed -i "s/#8a0000/\#$2/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
+  sed -i "s/#8a0000/\#$2/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
+}
+
+declare -F moving
+moving (){
+  if [ -d $ROUTE/kiatori_$1 ];
+  then
+    rm -Rf $ROUTE/kiatori_$1
+  fi 
+  mv ./temp $ROUTE/kiatori_$1
 }
 
 declare -F dconfig
@@ -98,19 +113,9 @@ fi
 
 if [[ $2 && $2 != "all" ]];
 then
-  setup
-  sed -i "s/_KIATORITHEME_/kiatori_$2/g" ./kiatori.dconf
-  cp -r ./kiatori_darkred ./temp
-  cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
-  sed -i "s/(_PRIMARY_COLOR_)/($2)/g" ./temp/gnome-shell/gnome-shell.css
+  setup $2 ${COLORSHEX[$2]}
   sed -i "s/_PRIMARY_COLOR_/${COLORS[$2]}/g" ./temp/gnome-shell/gnome-shell.css
-  sed -i "s/#8a0000/${COLORSHEX[$2]}/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
-  sed -i "s/#8a0000/${COLORSHEX[$2]}/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
-  if [ -d $ROUTE/kiatori_$2 ];
-  then
-    rm -Rf $ROUTE/kiatori_$2
-  fi 
-  mv ./temp $ROUTE/kiatori_$2
+  moving $2
   dconfig $2
 elif [[ $2 && $2 == "all" ]];
 # install all themes colors
@@ -133,7 +138,6 @@ fi
   # call funcs
   install_fonts
   install_extensions
-  setup
 
   rndColor=$(echo $(od -txC -An -N3 /dev/random | tr \  -) | sed 's/-//g')
   a=$(echo $rndColor | cut -c 1-2 | tr '[:lower:]' '[:upper:]')
@@ -142,21 +146,13 @@ fi
   r=$(echo "ibase=16; $a" | bc)
   g=$(echo "ibase=16; $b" | bc)
   b=$(echo "ibase=16; $c" | bc)
+  
   if [[ $r && $g && $b ]];
   then
     echo "generating new theme whit a random color... #$rndColor"
-    sed -i "s/_KIATORITHEME_/kiatori_$rndColor/g" ./kiatori.dconf
-    cp -r ./kiatori_darkred ./temp
-    cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
-    sed -i "s/(_PRIMARY_COLOR_)/($rndColor)/g" ./temp/gnome-shell/gnome-shell.css
+    setup $rndColor $rndColor
     sed -i "s/_PRIMARY_COLOR_/rgba($r, $g, $b,/g" ./temp/gnome-shell/gnome-shell.css
-    sed -i "s/#8a0000/\#$rndColor/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
-    sed -i "s/#8a0000/\#$rndColor/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
-    if [ -d $ROUTE/kiatori_$rndColor ];
-    then
-      rm -Rf $ROUTE/kiatori_$rndColor
-    fi 
-    mv ./temp $ROUTE/kiatori_$rndColor
+    moving $rndColor
     dconfig $rndColor
   else
     # echo "fail in the random color generation, trying again..."
