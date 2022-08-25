@@ -102,12 +102,46 @@ fi
 # restart gnome shell
 # busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart("Restarting…")'
 ;;
+-r)
+  cp ./setup/kiatori.dconf_setup ./kiatori.dconf
+  sed -i "s/_USERNAME_/$USER/" ./kiatori.dconf
+  rndColor=$(echo $(od -txC -An -N3 /dev/random | tr \  -) | sed 's/-//g')
+  a=$(echo $rndColor | cut -c 1-2 | tr '[:lower:]' '[:upper:]')
+  b=$(echo $rndColor | cut -c 3-4 | tr '[:lower:]' '[:upper:]')
+  c=$(echo $rndColor | cut -c 5-6 | tr '[:lower:]' '[:upper:]')
+  r=$(echo "ibase=16; $a" | bc)
+  g=$(echo "ibase=16; $b" | bc)
+  b=$(echo "ibase=16; $c" | bc)
+  if [[ $r && $g && $b ]];
+  then
+    echo "generating new theme whit a random color... #$rndColor"
+    sed -i "s/_KIATORITHEME_/kiatori_$rndColor/g" ./kiatori.dconf
+    cp -r ./kiatori_darkred ./temp
+    cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
+    sed -i "s/(_PRIMARY_COLOR_)/($rndColor)/g" ./temp/gnome-shell/gnome-shell.css
+    sed -i "s/_PRIMARY_COLOR_/rgba($r, $g, $b,/g" ./temp/gnome-shell/gnome-shell.css
+    sed -i "s/#8a0000/\#$rndColor/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
+    sed -i "s/#8a0000/\#$rndColor/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
+    if [ -d $ROUTE/kiatori_$rndColor ];
+    then
+      rm -Rf $ROUTE/kiatori_$rndColor
+    fi 
+    mv ./temp $ROUTE/kiatori_$rndColor
+    dconf load / < ./kiatori.dconf
+    rm ./kiatori.dconf
+    notify-send "kiatori_$rndColor theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
+  else
+    # echo "fail in the random color generation, trying again..."
+    $0 -r
+  fi
+;;  
+  
 -u)
   rm -Rf $ROUTE/kiatori_*
   notify-send "All Kiotari themes have been uninstalled." -i "gnome-logo-text-dark"
 ;;
 *)
-echo -e "\n||| Kiatori Gnome Shell Theme |||\n\nRun: ./install.sh -i all, or one of these colors: darkred, tomato, crimson, firebrick, orangered, darkolivegreen, forestgreen, darkcyan, dimgrey, midnightblue, royalblue, slateblue, seagreen, teal, purple to install. Or use -u to uninstall all.\n"
+echo -e "\n||| Kiatori Gnome Shell Theme |||\n\nRun: ./install.sh -i all, random, or one of these colors: darkred, tomato, crimson, firebrick, orangered, darkolivegreen, forestgreen, darkcyan, dimgrey, midnightblue, royalblue, slateblue, seagreen, teal, purple to install. Or use -u to uninstall all.\n"
 exit 1
 ;;
 esac
