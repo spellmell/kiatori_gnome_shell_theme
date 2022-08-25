@@ -8,6 +8,10 @@
 # 7/25/2022
 # https://github.com/spellmell/kiatori_gnome_theme
 
+ # This program is free software; you can redistribute it and/or modify it
+ # under the terms and conditions of the GNU Lesser General Public License,
+ # version 2.1, as published by the Free Software Foundation.
+
 THEME=kiatori_darkred
 ROUTE=~/.themes
 FONTROUTE=~/.local/share/fonts
@@ -20,7 +24,9 @@ COLORS=([darkred]="rgba(139, 0, 0," [tomato]="rgba(255, 99, 71," [crimson]="rgba
 declare -A COLORSHEX
 COLORSHEX=([darkred]="#8B0000" [tomato]="#FF6347" [crimson]="#DC143C" [firebrick]="#B22222" [orangered]="#FF4500" [darkolivegreen]="#556B2F" [forestgreen]="#228B22" [darkcyan]="#008B8B" [dimgrey]="#696969" [midnightblue]="#191970" [royalblue]="#4169E1" [slateblue]="#6A5ACD" [seagreen]="#2E8B57" [teal]="#008080" [purple]="#800080")
 
-# fonts instalation
+case "$1" in
+-i)
+  # fonts instalation
 installFonts=false
 if [ $installFonts == true ];
 then
@@ -62,38 +68,52 @@ then
 fi
 cp ./setup/kiatori.dconf_setup ./kiatori.dconf
 sed -i "s/_USERNAME_/$USER/" ./kiatori.dconf
-if [[ $1 && $1 != "all" ]];
+if [[ $2 && $2 != "all" ]];
 then
-  sed -i "s/_KIATORITHEME_/kiatori_$1/g" ./kiatori.dconf
+  sed -i "s/_KIATORITHEME_/kiatori_$2/g" ./kiatori.dconf
   cp -r ./kiatori_darkred ./temp
   cp ./setup/gnome-shell_PATRON_.css ./temp/gnome-shell/gnome-shell.css
-  sed -i "s/(_PRIMARY_COLOR_)/($1)/g" ./temp/gnome-shell/gnome-shell.css
-  sed -i "s/_PRIMARY_COLOR_/${COLORS[$1]}/g" ./temp/gnome-shell/gnome-shell.css
-  sed -i "s/#8a0000/${COLORSHEX[$1]}/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
-  sed -i "s/#8a0000/${COLORSHEX[$1]}/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
-  mv ./temp $ROUTE/kiatori_$1
+  sed -i "s/(_PRIMARY_COLOR_)/($2)/g" ./temp/gnome-shell/gnome-shell.css
+  sed -i "s/_PRIMARY_COLOR_/${COLORS[$2]}/g" ./temp/gnome-shell/gnome-shell.css
+  sed -i "s/#8a0000/${COLORSHEX[$2]}/g" ./temp/gnome-shell/assets/grad_bg_overview.svg
+  sed -i "s/#8a0000/${COLORSHEX[$2]}/g" ./temp/gnome-shell/assets/grad_bg_popups.svg
+  if [ -d $ROUTE/kiatori_$2 ];
+  then
+    rm -Rf $ROUTE/kiatori_$2
+  fi 
+  mv ./temp $ROUTE/kiatori_$2
   dconf load / < ./kiatori.dconf
   rm ./kiatori.dconf
-  notify-send "kiatori_$1 theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
-elif [[ $1 && $1 == "all" ]];
+  notify-send "kiatori_$2 theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
+elif [[ $2 && $2 == "all" ]];
+# install all themes colors
 then
   for i in ${!COLORS[@]}
   do
     if [ $i != "darkred" ];
     then
-      $0 $i
+      $0 -i $i
     fi
   done
-  # default theme color
-  $0 darkred
+  $0 -i darkred # install default theme color
 else
-  sed -i "s/_KIATORITHEME_/$THEME/g" ./kiatori.dconf
-  cp -r ./kiatori_* $ROUTE
-  dconf load / < ./kiatori.dconf
-  rm ./kiatori.dconf
-  notify-send "$THEME theme has ben installed" "Make an alt+f2, r and enter, to restart gnome with the new configuration." -i "gnome-logo-text-dark"
+  $0 # generic response with help for unexpected errors.
 fi
-
 # restart gnome shell
-busctl --user call org.gnome.Shell
+# busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart("Restarting…")'
+;;
+-u)
+  if [ -d $ROUTE/kiatori_* ];
+  then
+    rm -Rf $ROUTE/kiatori_*
+    notify-send "All Kiotari themes have been uninstalled." -i "gnome-logo-text-dark"
+  else
+    notify-send "There is nothing to uninstall." -i "gnome-logo-text-dark"
+  fi
+;;
+*)
+echo -e "\n||| Kiatori Gnome Shell Theme |||\n\nRun: ./install.sh -i all, or one of these colors: darkred, tomato, crimson, firebrick, orangered, darkolivegreen, forestgreen, darkcyan, dimgrey, midnightblue, royalblue, slateblue, seagreen, teal, purple to install. Or use -u to uninstall all.\n"
+exit 1
+;;
+esac
 exit 0
