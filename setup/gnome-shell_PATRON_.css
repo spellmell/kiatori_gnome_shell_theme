@@ -33,8 +33,11 @@ c/* Kiatori (_PRIMARY_COLOR_) theme for Gnome 42.*^
  fuentes candidatas: Raleway*, Orbitron*, Goldman, Fredoka One, Lobster, Righteous, Baloo Chettan 2, Silkscreen
  */
 
- /* primary color panel #070d13 - rgba(7, 13, 19, 1) */
- /* secondary color for backgrounds #203026 - rgba(32, 48, 38, 1) */
+ /* darkred theme base colors */
+ /* primary color for buttons and decorations #8b0000 - rgba(139, 0, 0, 1) */
+ /* secondary color for panel #070d13 - rgba(7, 13, 19, 1) */
+ /* tertiary color for backgrounds:hover #203026 - rgba(32, 48, 38, 1) */
+ /* fourth color for texts #bdb76b - rgba(189, 183, 107, 1) */
 
 /* Global Values */
 stage {

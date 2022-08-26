@@ -9,9 +9,15 @@
 
 # https://github.com/spellmell/kiatori_gnome_shell_theme
 
- # This program is free software; you can redistribute it and/or modify it
- # under the terms and conditions of the GNU Lesser General Public License,
- # version 2.1, as published by the Free Software Foundation.
+# This program is free software; you can redistribute it and/or modify it
+# under the terms and conditions of the GNU Lesser General Public License,
+# version 2.1, as published by the Free Software Foundation.
+
+# darkred theme base colors */
+# primary color for buttons and decorations #8b0000 - rgba(139, 0, 0, 1) */
+# secondary color for panel #070d13 - rgba(7, 13, 19, 1) */
+# ertiary color for backgrounds:hover #203026 - rgba(32, 48, 38, 1) */
+# fourth color for texts #bdb76b - rgba(189, 183, 107, 1) */
 
 THEME=kiatori_darkred
 ROUTE=~/.themes
